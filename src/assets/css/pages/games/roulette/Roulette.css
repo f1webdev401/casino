@@ -1,0 +1,886 @@
+.roulette-container {
+    height: max-content;
+    padding: 10px 0 50px;
+    background-color: var(--blue-gray);
+    background-image: linear-gradient(to right ,#4e0f27b1,var(--blue-gray));
+    min-height: 100vh;
+}
+.roulette-container .roulette-c-bg {
+    border: 1px solid white;
+    width: max-content;
+    margin: 0 auto;
+    padding: 5px 40px;
+    border-radius: 5px;
+    background-color: var(--blue-gray);
+}
+.roulette-container .roulette-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px 7px;
+}
+.roulette-container .roulette-header h1 {
+    padding: 5px 10px;
+    border: 1px solid white;
+    font-family: 'Poppins' ,sans-serif;
+    width: max-content;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    background-image: linear-gradient(to right ,#131521,#540E28);
+    color: rgba(255, 255, 255, 0.81);
+}
+.roulette-game-box {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 0 5px;
+    margin: 0 auto;
+}
+
+.main-roulette {
+    width: 450px;
+    height: 450px;
+    /* border: 1px solid black; */
+    position: relative;
+    user-select: none;
+    margin: 0 auto;
+}
+.main-roulette  .roulette-pointer {
+    position: absolute;
+    margin: 0 auto;
+    width: max-content;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    top: -17px;
+    font-size: 30px;
+    color: white;
+}
+.main-roulette  .roulette-arrow {
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    top: -10px;
+    width: 20px;
+    height: 30px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+.roulette-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 10px solid whitesmoke;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all ease-in-out 20s;
+    transform: rotate(0);
+}
+@keyframes start {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.roulette-box .box-data {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    font-weight: 600;
+    user-select: none;
+    pointer-events: none;
+}
+.roulette-box .box-data span {
+    color: white;
+    text-shadow: 0 0 2px black;
+}
+.roulette-box .box-data:nth-child(1) {
+    clip-path: polygon(12.5% 0, 0 0, 50% 50%);
+}
+.roulette-box .box-data:nth-child(1) span {
+    top: 17.5%;
+    left: 16%;
+    position: absolute;
+    transform: rotate(50deg);
+}
+.roulette-box .box-data:nth-child(2) {
+    clip-path: polygon(25% 0, 12.5% 0, 50% 50%);
+}
+.roulette-box .box-data:nth-child(2) span {
+    top: 18.5%;
+    left: 18%;
+    position: absolute;
+    transform: rotate(58deg);
+}
+.roulette-box .box-data:nth-child(3) {
+    clip-path: polygon(37.5% 0, 25% 0, 50% 50%);
+}
+.roulette-box .box-data:nth-child(3) span {
+    top: 11%;
+    left: 28.5%;
+    position: absolute;
+    transform: rotate(69deg);
+}
+.roulette-box .box-data:nth-child(4) {
+    clip-path: polygon(50% 0, 37.5% 0, 50% 50%);
+}
+.roulette-box .box-data:nth-child(4) span {
+    top: 7%;
+    left: 39.5%;
+    position: absolute;
+    transform: rotate(85deg);
+}
+.roulette-box .box-data:nth-child(5) {
+    clip-path: polygon(62.5% 0, 50% 0, 50% 50%);
+}
+.roulette-box .box-data:nth-child(5) span {
+    top: 14%;
+    left: 40.5%;
+    position: absolute;
+    transform: rotate(96deg);
+}
+.roulette-box .box-data:nth-child(6) {
+    clip-path: polygon(75% 0, 62.5% 0, 50% 50%);
+}
+.roulette-box .box-data:nth-child(6) span {
+    top: 9%;
+    left: 58.5%;
+    position: absolute;
+    transform: rotate(111.5deg);
+}
+.roulette-box .box-data:nth-child(7) {
+    clip-path: polygon(87.5% 0, 75% 0, 50% 50%);
+}
+.roulette-box .box-data:nth-child(7) span {
+    top: 19.5%;
+    left: 53.5%;
+    position: absolute;
+    transform: rotate(122deg);
+}
+.roulette-box .box-data:nth-child(8) {
+    clip-path: polygon(100% 0, 87.5% 0, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(8) span {
+    top: 17%;
+    left: 71.5%;
+    position: absolute;
+    transform: rotate(134deg);
+}
+.roulette-box .box-data:nth-child(9) {
+    clip-path: polygon(100% 12.5%, 100% 0, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(9 ) span {
+    top: 22%;
+    left: 72%;
+    position: absolute;
+    transform: rotate(140deg);
+}
+.roulette-box .box-data:nth-child(10) {
+    clip-path: polygon(100% 25%, 100% 12.5%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(10) span {
+    top: 27%;
+    left: 78%;
+    position: absolute;
+    transform: rotate(148deg);
+}
+.roulette-box .box-data:nth-child(11) {
+    clip-path: polygon(100% 37.5%, 100% 25%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(11) span {
+    top: 36%;
+    left: 67%;
+    position: absolute;
+    transform: rotate(160deg);
+}
+.roulette-box .box-data:nth-child(12) {
+    clip-path: polygon(100% 50%, 100% 37.5%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(12) span {
+    top: 43%;
+    left: 84%;
+    position: absolute;
+    transform: rotate(172deg);
+}
+.roulette-box .box-data:nth-child(13) {
+    clip-path: polygon(100% 62.5%, 100% 50%, 50% 50%);
+}
+.roulette-box .box-data:nth-child(13) span {
+    top: 53%;
+    left: 82%;
+    position: absolute;
+    transform: rotate(183deg);
+} 
+.roulette-box .box-data:nth-child(14) {
+    clip-path: polygon(100% 75%, 100% 62.5%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(14) span {
+    top: 62.5%;
+    left: 84%;
+    position: absolute;
+    transform: rotate(197deg);
+}
+.roulette-box .box-data:nth-child(15) {
+    clip-path: polygon(100% 87.5%, 100% 75%, 50% 50%);
+}
+.roulette-box .box-data:nth-child(15) span {
+    top: 66%;
+    left: 64%;
+    position: absolute;
+    transform: rotate(212deg);
+}
+.roulette-box .box-data:nth-child(16) {
+    clip-path: polygon(100% 100%, 100% 87.5%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(16) span {
+    top: 74%;
+    left: 75%;
+    position: absolute;
+    transform: rotate(220deg);
+}
+.roulette-box .box-data:nth-child(17) {
+    clip-path: polygon(87.5% 100%, 100% 100%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(17) span {
+    top: 73.5%;
+    left: 58%;
+    position: absolute;
+    transform: rotate(230deg);
+} 
+.roulette-box .box-data:nth-child(18) {
+    clip-path: polygon(75% 100%, 87.5% 100%, 50% 50%);
+}
+.roulette-box .box-data:nth-child(18) span {
+    top: 80.7%;
+    left: 62%;
+    position: absolute;
+    transform: rotate(-123deg);
+}     
+.roulette-box .box-data:nth-child(19) {
+    clip-path: polygon(62.5% 100%, 75% 100%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(19) span {
+    top: 79.5%;
+    left: 47.9%;
+    position: absolute;
+    transform: rotate(-111deg);
+}  
+.roulette-box .box-data:nth-child(20) {
+    clip-path: polygon(50% 100%, 62.5% 100%, 50% 50%);
+}  
+
+.roulette-box .box-data:nth-child(20) span {
+    top: 84%;
+    left: 42.5%;
+    position: absolute;
+    transform: rotate(-99deg);
+
+}  
+/* .roulette-box .box-data:nth-child(21) {
+    clip-path: polygon(50% 100%, 62.5% 100%, 50% 50%);
+    background-color: rgb(7, 189, 77);
+}  */
+ 
+.roulette-box .box-data:nth-child(21) {
+    clip-path: polygon(37.5% 100%, 50% 100%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(21) span {
+    top: 86.5%;
+    left: 37%;
+    position: absolute;
+    transform: rotate(-85deg);
+} 
+.roulette-box .box-data:nth-child(22) {
+    clip-path: polygon(25% 100%, 37.5% 100%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(22) span {
+    top: 79.5%;
+    left: 24%;
+    position: absolute;
+    transform: rotate(-71deg);
+}
+.roulette-box .box-data:nth-child(23) {
+    clip-path: polygon(12.5% 100%, 25% 100%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(23) span {
+    top: 82.5%;
+    left: 23%;
+    position: absolute;
+    transform: rotate(-60deg);
+}
+.roulette-box .box-data:nth-child(24) {
+    clip-path: polygon(0% 100%, 12.5% 100%, 50% 50%);
+}
+.roulette-box .box-data:nth-child(24) span {
+    top: 79.5%;
+    left: 16.5%;
+    position: absolute;
+    transform: rotate(-53deg);
+}
+.roulette-box .box-data:nth-child(25) {
+    clip-path: polygon(0% 87.5%,0 100%, 50% 50%);
+}  
+.roulette-box .box-data:nth-child(25) span {
+    top: 73.5%;
+    left: 12%;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+.roulette-box .box-data:nth-child(26) {
+    clip-path: polygon(0% 75%,0 87.5%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(26) span {
+    top: 64.8%;
+    left: 8%;
+    position: absolute;
+    transform: rotate(-32deg);
+} 
+.roulette-box .box-data:nth-child(27) {
+    clip-path: polygon(0% 62.5%,0 75%, 50% 50%);
+}
+.roulette-box .box-data:nth-child(27) span {
+    top: 61.8%;
+    left: 5%;
+    position: absolute;
+    transform: rotate(-22deg);
+}
+.roulette-box .box-data:nth-child(28) {
+    clip-path: polygon(0% 50%,0 62.5%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(28) span {
+    top: 53.5%;
+    left: 3%;
+    position: absolute;
+    transform: rotate(-10deg);
+} 
+.roulette-box .box-data:nth-child(29) {
+    clip-path: polygon(0% 37.5%,0 50%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(29) span {
+    top: 43.5%;
+    left: 3%;
+    position: absolute;
+    transform: rotate(7deg);
+} 
+.roulette-box .box-data:nth-child(30) {
+    clip-path: polygon(0% 25%,0 37.5%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(30) span {
+    top: 33.5%;
+    left: 5%;
+    position: absolute;
+    transform: rotate(20deg);
+}  
+.roulette-box .box-data:nth-child(31) {
+    clip-path: polygon(0% 12.5%,0 25%, 50% 50%);
+} 
+.roulette-box .box-data:nth-child(31) span {
+    top: 26.5%;
+    left: 8%;
+    position: absolute;
+    transform: rotate(34deg);
+} 
+.roulette-box .box-data:nth-child(32) {
+    clip-path: polygon(0% 0%,0 12.5%, 50% 50%);
+}
+.roulette-box .box-data:nth-child(32) span {
+    top: 19.5%;
+    left: 12%;
+    position: absolute;
+    transform: rotate(42deg);
+}
+/* .roulette-box .box-data:nth-child(8) {
+    background-color: blue;
+}  */
+
+
+/* .roulette-box .box-data:nth-child(5) {
+    clip-path: polygon(95% 0, 85% 0, 50% 50%);
+    background-color: blue;
+}
+.roulette-box .box-data:nth-child(6) {
+    clip-path: polygon(95% 0, 85% 0, 50% 50%);
+    background-color: orange;
+} */
+
+.roulette-action-button {
+    width: max-content;
+    margin: 0 auto;
+    /* background-color: blue; */
+    padding: 3px;
+}
+.roulette-action-button button {
+    padding: 6px 20px;
+    cursor: pointer;
+    background-color: #4C0F27;
+    font-family: "Poppins",sans-serif;
+    border: 0;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.792);
+    border: 1px solid rgba(255, 255, 255, 0.792);
+    transition: all .3s;
+    transform: scale(1);
+}
+.roulette-action-button button:hover {
+    border: 2px solid #fff;
+    background:transparent;
+    color: #fff;
+    transform: scale(1.03);
+}
+.roulette-action-button button:active {
+    transform: scale(1);
+    background-color: #4C0F27;
+    border: 1px solid rgba(255, 255, 255, 0.792);
+}
+.roulette-price-model {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #131521ae;
+    z-index: 9999;
+}
+.roulette-price-model .roulette_price_container {
+    width: 100%;
+    height: 100%;
+    max-width: 350px;
+    max-height: 250px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--light-black);
+    font-family: "Poppins",sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    border: 1px solid white;
+}
+.roulette-price-model .roulette_price_container  .roulette-price-text h1 {
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    color: #ffffffb8;
+}
+.roulette-price-model .roulette_price_container  .roulette-price-text h1:nth-child(2) {
+    color: var(--yellow);
+    opacity: .9;
+}
+.roulette-price-model .roulette_price_container .roulette_price_btn button {
+    cursor: pointer;
+    width: 100px;
+    padding: 5px;
+    font-weight: 600;
+    background-color: var(--green);
+    border-radius: 5px;
+    border: none;
+    color: rgba(255, 255, 255, 0.768);
+    transition: all .3s;
+}
+.roulette-price-model .roulette_price_container .roulette_price_btn button:hover {
+    border: 1px solid var(--green);
+    background: transparent;
+}
+.roulette-price-model .roulette_price_container .roulette_price_btn button:active {
+    background-color: var(--green);
+}
+.roulette-cs-popup {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #131521ae;
+    z-index: 25;
+}
+
+.roulette-cs-popup .rcsp-body {
+    width: 100%;
+    max-width: 300px;
+    height: 160px;
+    background-color: var(--light-black);
+    border-radius: 10px;
+    position: relative;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    border: 1px solid white;
+    color: #fff;
+    transform: scale(.5);
+    animation: rcspBody .3s forwards;
+}
+@keyframes rcspBody {
+    from{transform: scale(.5);}
+    to{transform: scale(1);}
+}
+.roulette-cs-popup .rcsp-body .close-cs-popup {
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    right: 10px;
+}
+.roulette-cs-popup .rcsp-body .rcsp-text span {
+    opacity: .9;
+}
+.roulette-cs-popup .rcsp-body .rcsp-text i {
+    margin: 0 5px 0 10px;
+    color: var(--yellow);
+    opacity: .8;
+}
+.roulette-cs-popup .rcsp-body .rcsp-text .credit-20 {
+    text-decoration: underline;
+}
+
+.roulette-cs-popup .rcsp-body .rcsp-action {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.roulette-cs-popup .rcsp-body .rcsp-action button {
+    width: 40%;
+    padding: 5px 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+}
+.roulette-cs-popup .rcsp-body .rcsp-action button:nth-child(1) {
+    background-color: var(--green);
+    color: rgba(255, 255, 255, 0.781);
+    transition: all .3s
+}
+.roulette-cs-popup .rcsp-body .rcsp-action button:nth-child(1):hover {
+    border: 1px solid var(--green);
+    background: transparent;
+}
+.roulette-cs-popup .rcsp-body .rcsp-action button:nth-child(1):active {
+    background-color: var(--green);
+}
+.roulette-cs-popup .rcsp-body .rcsp-action button:nth-child(2) {
+    background-color: var(--red);
+    color: rgba(255, 255, 255, 0.781);
+    transition: all .3s;
+}
+.roulette-cs-popup .rcsp-body .rcsp-action button:nth-child(2):hover {
+    border: 1px solid var(--red);
+    background: transparent;
+}
+.roulette-cs-popup .rcsp-body .rcsp-action button:nth-child(2):active {
+    border: 0;
+    background-color: var(--red);
+}
+
+@media only screen and (max-width: 650px) {
+    .roulette-container {
+        padding: 0 0 50px;
+    }
+    .roulette-container .roulette-c-bg {
+        width: 100%;
+        padding: 20px 0;
+        height: max-content;
+    }
+    /* .main-roulette {
+        width: 450px;
+        height: 50px;
+        min-width: 350px;
+        min-height: 350px;
+    } */
+}
+@media only screen and (max-width: 520px) {
+    .roulette-container {
+        height: max-content;
+        padding: 0;
+        background-color: var(--blue-gray);
+        background-image: linear-gradient(to right ,#4e0f27b1,var(--blue-gray));
+        min-height: max-content;
+    }
+    .main-roulette {
+        width: 350px;
+        height: 350px;
+        min-width: 350px;
+        min-height: 350px;
+    }
+    .roulette-container .roulette-c-bg {
+        height: calc(100vh - 80px);
+        border: 0;
+    }
+    .roulette-box .box-data span {
+        font-size: 9px;
+    }
+    .roulette-box .box-data:nth-child(1) span {
+        top: 18%;
+        left: 16%;
+    }
+    .roulette-box .box-data:nth-child(2) span {
+        top: 20%;
+        left: 18%;
+        position: absolute;
+        transform: rotate(58deg);
+    }
+    .roulette-box .box-data:nth-child(3) span {
+        top: 11.5%;
+        left: 28%;
+        position: absolute;
+        transform: rotate(70deg);
+    }
+    .roulette-box .box-data:nth-child(4) span {
+        top: 7%;
+        left: 39%;
+        position: absolute;
+        transform: rotate(82deg);
+    }
+    .roulette-box .box-data:nth-child(5) span {
+        top: 15.5%;
+        left: 39%;
+        position: absolute;
+        transform: rotate(96deg);
+    }
+    .roulette-box .box-data:nth-child(6) span {
+        top: 9%;
+        left: 58%;
+        position: absolute;
+        transform: rotate(111.5deg);
+    }
+   
+    .roulette-box .box-data:nth-child(7) span {
+        top: 20%;
+        left: 52.5%;
+        position: absolute;
+        transform: rotate(122deg);
+    }
+    .roulette-box .box-data:nth-child(8) span {
+        top: 17%;
+        left: 71%;
+        position: absolute;
+        transform: rotate(132deg);
+    }
+    .roulette-box .box-data:nth-child(9 ) span {
+        top: 23%;
+        left: 70.5%;
+        position: absolute;
+        transform: rotate(139deg);
+    }
+    .roulette-box .box-data:nth-child(10) span {
+        top: 26%;
+        left: 78%;
+        position: absolute;
+        transform: rotate(148deg);
+    }
+    .roulette-box .box-data:nth-child(11) span {
+        top: 36.5%;
+        left: 65.5%;
+        position: absolute;
+        transform: rotate(160deg);
+    }
+   
+    .roulette-box .box-data:nth-child(12) span {
+        top: 43%;
+        left: 83%;
+        position: absolute;
+        transform: rotate(172deg);
+    }
+    .roulette-box .box-data:nth-child(13) {
+        clip-path: polygon(100% 62.5%, 100% 50%, 50% 50%);
+    }
+    .roulette-box .box-data:nth-child(13) span {
+        top: 53%;
+        left: 80%;
+        position: absolute;
+        transform: rotate(183deg);
+    } 
+    .roulette-box .box-data:nth-child(14) span {
+        top: 62.5%;
+        left: 84%;
+        position: absolute;
+        transform: rotate(197deg);
+    }
+    .roulette-box .box-data:nth-child(15) span {
+        top: 65.5%;
+        left: 63%;
+        position: absolute;
+        transform: rotate(213deg);
+    }
+    .roulette-box .box-data:nth-child(16) span {
+        top: 74.5%;
+        left: 75%;
+        position: absolute;
+        transform: rotate(220deg);
+    }
+  
+    .roulette-box .box-data:nth-child(17) span {
+        top: 73.5%;
+        left: 57.5%;
+        position: absolute;
+        transform: rotate(229deg);
+    } 
+  
+    .roulette-box .box-data:nth-child(18) span {
+        top: 81.5%;
+        left: 63%;
+        position: absolute;
+        transform: rotate(-124deg);
+    }     
+    .roulette-box .box-data:nth-child(19) span {
+        top: 79.5%;
+        left: 47%;
+        position: absolute;
+        transform: rotate(-112deg);
+    }  
+    .roulette-box .box-data:nth-child(20) span {
+        top: 84%;
+        left: 42%;
+        position: absolute;
+        transform: rotate(-99deg);
+    
+    }  
+    /* .roulette-box .box-data:nth-child(21) {
+        clip-path: polygon(50% 100%, 62.5% 100%, 50% 50%);
+        background-color: rgb(7, 189, 77);
+    }  */
+     
+    .roulette-box .box-data:nth-child(21) span {
+        top: 86%;
+        left: 37%;
+        position: absolute;
+        transform: rotate(-85deg);
+    } 
+    .roulette-box .box-data:nth-child(22) span {
+        top: 79%;
+        left: 24%;
+        position: absolute;
+        transform: rotate(-71deg);
+    }
+    .roulette-box .box-data:nth-child(23) span {
+        top: 82.5%;
+        left: 23%;
+        position: absolute;
+        transform: rotate(-60deg);
+    }
+    .roulette-box .box-data:nth-child(24) span {
+        top: 79.5%;
+        left: 17%;
+        position: absolute;
+        transform: rotate(-50deg);
+    }
+    .roulette-box .box-data:nth-child(25) span {
+        top: 73.5%;
+        left: 12%;
+        position: absolute;
+        transform: rotate(-43deg);
+    }
+    .roulette-box .box-data:nth-child(26) span {
+        top: 65%;
+        left: 7.5%;
+        position: absolute;
+        transform: rotate(-32deg);
+    } 
+    .roulette-box .box-data:nth-child(27) {
+        clip-path: polygon(0% 62.5%,0 75%, 50% 50%);
+    }
+    .roulette-box .box-data:nth-child(27) span {
+        top: 61.8%;
+        left: 5%;
+        position: absolute;
+        transform: rotate(-22deg);
+    }
+    .roulette-box .box-data:nth-child(28) {
+        clip-path: polygon(0% 50%,0 62.5%, 50% 50%);
+    } 
+    .roulette-box .box-data:nth-child(28) span {
+        top: 53.5%;
+        left: 3%;
+        position: absolute;
+        transform: rotate(-10deg);
+    } 
+    .roulette-box .box-data:nth-child(29) {
+        clip-path: polygon(0% 37.5%,0 50%, 50% 50%);
+    } 
+    .roulette-box .box-data:nth-child(29) span {
+        top: 43.5%;
+        left: 3%;
+        position: absolute;
+        transform: rotate(7deg);
+    } 
+    .roulette-box .box-data:nth-child(30) {
+        clip-path: polygon(0% 25%,0 37.5%, 50% 50%);
+    } 
+    .roulette-box .box-data:nth-child(30) span {
+        top: 33.5%;
+        left: 5%;
+        position: absolute;
+        transform: rotate(20deg);
+    }  
+    .roulette-box .box-data:nth-child(31) {
+        clip-path: polygon(0% 12.5%,0 25%, 50% 50%);
+    } 
+    .roulette-box .box-data:nth-child(31) span {
+        top: 26.5%;
+        left: 8%;
+        position: absolute;
+        transform: rotate(34deg);
+    } 
+    .roulette-box .box-data:nth-child(32) {
+        clip-path: polygon(0% 0%,0 12.5%, 50% 50%);
+    }
+    .roulette-box .box-data:nth-child(32) span {
+        top: 19.5%;
+        left: 12%;
+        position: absolute;
+        transform: rotate(42deg);
+    }
+    .roulette-price-model .roulette_price_container {
+        max-width: 250px;
+        max-height: 200px;
+    }
+    .roulette-price-model .roulette_price_container  .roulette-price-text h1 {
+        font-size: 17px;
+        letter-spacing: 1.5px;
+        color: #ffffffb8;
+    }
+    .roulette-cs-popup  {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        padding: 0;
+    }
+    .roulette-cs-popup .rcsp-body {
+        width: 100%;
+        max-width: 300px;
+        height: 160px;
+        background-color: var(--light-black);
+        border-radius: 10px;
+        position: relative;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-family: "Poppins",sans-serif;
+        letter-spacing: 1.5px;
+        border: 1px solid white;
+        color: #fff;
+        transform: scale(.5);
+        animation: rcspBody .3s forwards;
+    }
+}

@@ -1,0 +1,92 @@
+.about-container {
+    height: 100vh;
+    background-color: var(--blue-gray);
+    padding: 20px 0;
+}
+.about-container .ap-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+.about-container .ap-header .ap-header-text {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: "Poppins",sans-serif;
+    border-radius: 5px;
+    /* background-image: linear-gradient(to right ,#C9FC01 , #6F7F1D); */
+    background-color: var(--yellow);
+    width: max-content;
+    border: 1px solid white;
+    gap: 15px;
+    color: #ffffffcd;
+    padding-right: 20px;
+    text-shadow: 0px 0px 5px black;
+}
+
+.about-container .ap-header .ap-header-text .ap-header-name {
+    position: relative;
+}
+.about-container .ap-header .ap-header-text .ap-header-name i {
+    position: absolute;
+    right: -17px;
+    color: white;
+    top: -5px;
+}
+.about-container .ap-body-smm {
+    margin: 20px auto 0;
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid white;
+    padding: 10px;
+    font-family: "Poppins",sans-serif;
+    border-radius: 5px;
+    background-color: #2D2C3A;
+    color: #ffffffdb;
+}
+.about-container .ap-body-smm p span {
+    font-weight: 600;
+}
+
+.about-container .ap-gaming-fairness {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    background-color: #2D2C3A;
+    color: #ffffffda;
+}
+.about-container .ap-how-participate {
+    width: 100%;
+    max-width: 1200px;
+    margin:  20px auto 0;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #2D2C3A;
+    font-family: "Poppins",sans-serif;
+    color: #ffffffc7;
+}
+
+.about-container .ap-get-started {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-container .ap-get-started a {
+    text-decoration: none;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    border: 1px solid var(--yellow);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: var(--yellow);
+}

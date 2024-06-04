@@ -1,0 +1,262 @@
+.landing-page-container {
+    background-image: url('../../images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+}
+.lp-main-headline-container {
+    display: flex;
+    /* border: 1px solid black; */
+    width: 100%;
+    max-width: 1300px;
+    margin: 50px auto 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lp-main-headline-container .lp-headline .lp-headline-main-text {
+    color: #fff;
+    font-family: "Poppins",sans-serif;
+    opacity: .9;
+    margin-bottom: 10px;
+}
+.lp-main-headline-container .lp-headline .lp-headline-main-text .lp-main-text-price {
+    background-color: var(--yellow);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #080D20;
+    background-image: linear-gradient(top to bottom ,#FCC336,var(--yellow));
+}
+.lp-main-headline-container .lp-headline .lp-headline-main-text h1 {
+    letter-spacing: 1px;
+}
+.lp-main-headline-container .lp-headline .lp-headline-main-text h1:nth-child(1) {
+    font-size: 30px;
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn  {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.lp-main-headline-container .lp-headline p {
+    color: yellow;
+    letter-spacing: 1.5px;
+    font-family: "Poppins",sans-serif;
+    opacity: .5;
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn button {
+    padding: 5px 15px;
+    font-family: "Poppins";
+    letter-spacing: 1.5px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(1) {
+    background-color: var(--green);
+    color: #fff;
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(1):hover {
+    transform: scale(1.3);
+    opacity: .8;
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(1):active {
+    transform: scale(1);
+    opacity: 1;
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(2) {
+    border: 1px solid var(--green);
+    background-color: transparent;
+    color: var(--green);
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(2):hover {
+    transform: scale(1.3);
+    opacity: .8;
+    z-index: 2;
+}
+.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(2):active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+.lp-headline-image-container {
+    /* border: 1px solid white; */
+    position: relative;
+}
+.lp-headline-image-container .lp-headline-img-text {
+    position: absolute;
+    color: #f4f4f4;
+    padding: 10px;
+    text-shadow: 0px 0px 4px var(--yellow);
+    border-radius: 20px;
+    font-family: "Poppins",sans-serif;
+    bottom: 0;
+}
+.lp-headline-image-container .lp-headline-img-wrapper {
+    /* border: 1px solid white; */
+    height: 100%;
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.lp-headline-image-container .lp-headline-img-wrapper  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* border: 1px solid green; */
+}
+
+.lp-instruct-play {
+    width: 100%;
+    max-width: 1300px;
+    /* border: 1px solid black; */
+    margin: 30px auto 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.lp-instruct-play .lpip-box {
+    height: 130px;
+    /* border: 1px solid white; */
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    background-color: #1E232E;
+    box-shadow: 0px 0px 2px white;
+}
+.lp-instruct-play .lpip-box .lpip-box-icon{
+    width: 100px;
+    height: 100%;
+    min-width: 90px;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2E3543;
+    border-radius: 10px;
+}
+.lp-instruct-play .lpip-box .lpip-box-icon i {
+    font-size: 40px;
+    color: var(--yellow);
+}
+.lp-instruct-play .lpip-box .lpip-txt span {
+    color: #fff;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+}
+.lp-banner {
+    width: 100%;
+    max-width: 1300px;
+    margin: 110px auto ;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px var(--yellow);
+    background-image: url('../../images/jp-win.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+ 
+}
+
+.lp-banner .lp-banner-text {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #080d20aa;
+}
+.lp-banner .lp-banner-text h1 {
+    text-shadow: 0px 0px 5px black;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: var(--yellow);
+}
+
+.lp-banner .lp-banner-text button {
+    padding: 6px 20px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    background-image: linear-gradient(#FEEA3D,#FBA33A);
+    border: none;
+    font-weight: 600;
+    color: #080D20;
+    cursor: pointer;
+}
+
+.lp-platform {
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid white;
+    margin: 0 auto 100px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1E232E;
+    font-family: "Poppins",sans-serif;
+}
+.lp-platform h1 {
+    letter-spacing: 1.5px;
+    color: #fff;
+    opacity: .9;
+}
+.lp-platform .lp-platform-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lp-platform .lp-platform-content .lp-platform-img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+}
+.lp-platform .lp-platform-content .lp-platform-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lp-platform .lp-platform-content .lp-platform-article {
+    width: 100%;
+    max-width: 500px;
+
+}
+
+
+.lp-platform .lp-platform-content .lp-platform-article .lppa-box .llpa-box-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--yellow);
+}
+.lp-platform .lp-platform-content .lp-platform-article .lppa-box .llpa-box-header i {
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    width: 28px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lp-platform .lp-platform-content .lp-platform-article .lppa-box .llpa-box-header h4 {
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 2px black;
+    opacity: .9;
+}
+.lp-platform .lp-platform-content .lp-platform-article .lppa-box span {
+    color: #fff;
+    opacity: .8;
+    font-size: 14px;
+    letter-spacing: 1px;
+}

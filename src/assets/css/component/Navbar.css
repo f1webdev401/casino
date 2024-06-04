@@ -1,0 +1,134 @@
+.app-nav {
+    height: 80px;
+    background-color: var(--light-black);
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 9999;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.app-nav .nav-logo-txt {
+    width: max-content;
+    position: relative;
+    height: max-content;
+    margin: auto 0;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
+}
+.app-nav .nav-logo-txt i {
+    position: absolute;
+    right: -20px;
+    top: -5px;
+    color: var(--yellow);
+}
+.app-nav .link-wrapper .link-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.app-nav .link-wrapper .link-list a {
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: all .3s;
+}
+.app-nav .link-wrapper .link-list a:hover {
+    transform: scale(1.03);
+}
+.app-nav .link-wrapper .link-list a:active {
+    transform: scale(1);
+}
+.app-nav .link-wrapper  {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+.app-nav .link-wrapper .nav-login-reg-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.app-nav .link-wrapper .nav-login-reg-btn button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: white;
+}
+.app-nav .link-wrapper .nav-login-reg-btn button:nth-child(1) {
+    border: 1px solid var(--yellow);
+    background-color: transparent;
+}
+.app-nav .link-wrapper .nav-login-reg-btn button:nth-child(2) {
+    background-color: var(--yellow);
+}
+
+
+/* logined */
+.app-nav .nav-points-menu {
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.app-nav .nav-points-menu .npm-div {
+    font-family: "Poppins",sans-serif;
+    display: flex;
+    align-items: center;    
+    gap: 10px;
+    background-color: var(--blue-gray);
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 120px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.app-nav .nav-points-menu .npm-div:nth-child(2) {
+    width: 140px;
+}
+.app-nav .nav-points-menu .npm-div i {
+    color: var(--yellow);
+    opacity: .9;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.642);
+    background-color: transparent;
+    border-radius: 50%;
+}
+.app-nav .nav-points-menu .npm-div span {
+    color: #fff;
+    opacity: .9;
+}
+.app-nav .nav-points-menu .npm-div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.app-nav .nav-points-menu .npm-div:nth-child(2) .nav-credits-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.app-nav .nav-points-menu .npm-div:nth-child(2) button {
+    background-color: var(--light-black);
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: none;
+}
+.app-nav .nav-points-menu .npm-div:nth-child(2) button i {
+    box-shadow: none;
+    font-size: 12px;
+    color: white;
+}
+
+.app-nav .nav-points-menu .nav-menu-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+/* logined */
