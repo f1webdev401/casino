@@ -1,0 +1,86 @@
+.login-container {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue-gray);
+}
+.login-container .login-c-wrapper {
+    border: 1px solid var(--yellow);
+    padding: 20px;
+    width: 100%;
+    max-width: 450px;
+    background-color: #2E3543;
+    border-radius: 10px;
+}
+.login-container .login-c-wrapper h1 ,h2 {
+    font-family: "Poppins",sans-serif;
+    color: rgba(245, 245, 245, 0.866);
+}
+
+.login-container .login-c-wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.login-container .login-c-wrapper form .login-input-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.login-container .login-c-wrapper form .login-input-wrapper label {
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: whitesmoke;
+    text-shadow: 0px 0px 2px black;
+}
+.login-container .login-c-wrapper form .login-input-wrapper input {
+    height: 35px;
+    outline: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--light-black);
+    color: whitesmoke;
+    font-size: 16px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.login-container .login-c-wrapper form button {
+    height: 35px;
+    font-size: 17px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-radius: 20px;
+    border: none;
+    background-image: linear-gradient(to right ,#02743A,#1E232E);
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.login-container .login-c-wrapper form button:hover {
+    transform: scale(1.03);
+    opacity: .7;
+}
+.login-container .login-c-wrapper form button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+.login-container .login-c-wrapper form .login-d-account {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "Poppins",sans-serif;
+}
+.login-container .login-c-wrapper form .login-d-account span {
+    color: white;
+   
+}
+.login-container .login-c-wrapper form .login-d-account a {
+    color: rgba(0, 0, 255, 0.876);
+    text-shadow: 0 0 2px white;
+}

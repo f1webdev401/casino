@@ -86,6 +86,7 @@
 .lp-headline-image-container {
     /* border: 1px solid white; */
     position: relative;
+    /* border: 1px solid white; */
 }
 .lp-headline-image-container .lp-headline-img-text {
     position: absolute;
@@ -124,7 +125,7 @@
 }
 
 .lp-instruct-play .lpip-box {
-    height: 130px;
+    height: 100px;
     /* border: 1px solid white; */
     width: 300px;
     border-radius: 10px;
@@ -259,4 +260,157 @@
     opacity: .8;
     font-size: 14px;
     letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .lp-main-headline-container .lp-headline  {
+        /* border: 1px solid white; */
+        min-width: 395px;
+
+    } 
+    .lp-main-headline-container .lp-headline .lp-headline-main-text h1 {
+        font-size: 20px;
+    }
+    .lp-main-headline-container .lp-headline .lp-headline-main-text h1:nth-child(1) {
+        font-size: 25px;
+    }
+    .lp-headline-image-container {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+    }
+    .lp-headline-image-container .lp-headline-img-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .lp-headline-image-container .lp-headline-img-text {
+        font-size: 17px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .lp-instruct-play .lpip-box {
+        width: 250px;
+        height: 80px;
+    }  
+    .lp-instruct-play .lpip-box .lpip-box-icon {
+        border: 1px solid white;
+        min-width: 60px;
+        max-width: 60px;
+    }
+    .lp-instruct-play .lpip-box .lpip-box-icon i {
+        font-size: 25px;
+    }
+    .lp-instruct-play .lpip-box .lpip-txt span  {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 930px) {
+    .lp-main-headline-container {
+        border: 1px solid white;
+    }
+    .lp-main-headline-container {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .lp-main-headline-container .lp-headline {
+        /* border: 1px solid red; */
+        height: calc(100vh - 80px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 100px;
+    }
+    .lp-main-headline-container .lp-headline .lp-headline-main-text h1 {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    .lp-main-headline-container .lp-headline .lp-headline-main-text h1:nth-child(1) {
+        font-size: 30px;
+    }
+    .lp-headline-image-container {
+        margin: 50px 0;
+    }
+} 
+@media only screen and (max-width: 840px) {
+    .lp-platform {
+        border-radius: 0;
+        padding: 20px 10px 100px;
+    }
+    .lp-platform .lp-platform-content  {
+        flex-direction: column;
+    }
+    
+    .lp-platform .lp-platform-content .lp-platform-img {
+        margin: 0 auto;
+    }
+    .lp-platform .lp-platform-content .lp-platform-article {
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 810px) {
+    .lp-instruct-play {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+    .lp-instruct-play .lpip-box {
+        width: 250px;
+        height: 80px;
+    }  
+    .lp-instruct-play .lpip-box .lpip-box-icon {
+        border: 1px solid white;
+        min-width: 60px;
+        max-width: 60px;
+    }
+    .lp-instruct-play .lpip-box .lpip-box-icon i {
+        font-size: 25px;
+    }
+    .lp-instruct-play .lpip-box .lpip-txt span  {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .lp-main-headline-container .lp-headline  {
+        padding-left: 50px;
+    }
+    .lp-main-headline-container .lp-headline .lp-headline-main-text h1 {
+        font-size: 20px;
+    }
+    .lp-main-headline-container .lp-headline .lp-headline-main-text h1:nth-child(1) {
+        font-size: 23px;
+    }
+    .lp-platform .lp-platform-content .lp-platform-article {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .lp-banner .lp-banner-text h1 {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 415px) {
+    .lp-main-headline-container .lp-headline {
+        min-width: 0;
+    }
+    .lp-main-headline-container .lp-headline  {
+        padding-left: 10px;
+    }
+    .lp-headline-image-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+    }
+    .lp-headline-image-container .lp-headline-img-wrapper {
+        max-width: 350px;
+        margin: 0 auto;
+    }
 }

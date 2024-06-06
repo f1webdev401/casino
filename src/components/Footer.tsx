@@ -3,16 +3,16 @@ import '../assets/css/component/Footer.css'
 const Footer = () => {
   return (
     <footer className='footer'>
-        {/* <div className="footer-body">
+        <div className="footer-body">
 
-        <div className="footer-logo-txt">
+        <div className="footer-logo-txt ">
             <div className="footer-text">
                 <h1>SMM PLAY</h1>
                 <i className="fa-solid fa-star"></i>
             </div>
         </div>
 
-        <div className="footer-social-links link-box">
+        <div className="footer-social-links link-box f-body-child">
             <h5>FOLLOW US</h5>
             <div className='footer-link-div'>
                 <i className="fa-brands fa-facebook-f facebook-i"></i>
@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className="footer-terms link-box">
+        <div className="footer-terms link-box f-body-child">
             <h5>TERMS</h5>
             <div className="footer-link-div">
 
@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className="footer-legal link-box">
+        <div className="footer-legal link-box f-body-child">
             <h5>LEGAL</h5>
             <div className='footer-link-div'>
             <NavLink to={""}>Anti-Money Laundering</NavLink>
@@ -75,7 +75,7 @@ const Footer = () => {
             </div>
         </div>
 
-        </div> */}
+        </div>
         <div className="footer-copy-right">
 
         <p>&copy; 2024 SMM PLAY. All rights reserved</p>

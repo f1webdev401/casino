@@ -24,7 +24,6 @@ const LandingPage = () => {
                 <div  className="lp-headline-img-wrapper">
                     <img src={HeadlineImg} alt="" />
                 </div>
-                {/* <h1>Win Big Today.</h1> */}
             </div>
         </div>
 
@@ -58,17 +57,12 @@ const LandingPage = () => {
 
         <div className="lp-banner">
             <div className="lp-banner-text">
-            <h1>SIGN UP GET FREE 100 BALANCE</h1>
+            <h1>TOP UP 200 PHP GET FREE 100 CREDITS</h1>
             <button>Get Started</button>
             </div>
-            {/* <div className="lp-banner-img">
-                <img src={BannerImg} alt="" />
-            </div> */}
+       
         </div>
 
-        {/* <div className="lp-comming-soon-games">
-            <h1>Comming Soon!</h1>
-        </div> */}
 
         <div className="lp-platform">
             <h1>Platform</h1>

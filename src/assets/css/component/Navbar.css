@@ -4,7 +4,7 @@
     position: sticky;
     top: 0;
     display: flex;
-    z-index: 9999;
+    z-index: 100;
     justify-content: space-between;
     padding: 0 20px;
 }
@@ -53,24 +53,58 @@
     align-items: center;
     gap: 10px;
 }
-.app-nav .link-wrapper .nav-login-reg-btn button {
+.app-nav .link-wrapper .nav-login-reg-btn a {
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
     font-family: "Poppins",sans-serif;
     letter-spacing: 1.5px;
     color: white;
+    text-decoration: none;
 }
-.app-nav .link-wrapper .nav-login-reg-btn button:nth-child(1) {
+.app-nav .link-wrapper .nav-login-reg-btn a:nth-child(1) {
     border: 1px solid var(--yellow);
     background-color: transparent;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
 }
-.app-nav .link-wrapper .nav-login-reg-btn button:nth-child(2) {
+.app-nav .link-wrapper .nav-login-reg-btn a:nth-child(1):hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.app-nav .link-wrapper .nav-login-reg-btn a:nth-child(1):active {
+    transform: scale(1);
+    opacity: 1;
+}
+.app-nav .link-wrapper .nav-login-reg-btn a:nth-child(2) {
     background-color: var(--yellow);
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
 }
-
+.app-nav .link-wrapper .nav-login-reg-btn a:nth-child(2):hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.app-nav .link-wrapper .nav-login-reg-btn a:nth-child(2):active {
+    transform: scale(1);
+    opacity: 1
+}
+.app-nav .link-wrapper .lw-menu-btn {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
 
 /* logined */
+
 .app-nav .nav-points-menu {
     /* border: 1px solid white; */
     display: flex;
@@ -130,5 +164,286 @@
     font-size: 20px;
     color: #fff;
     cursor: pointer;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.app-nav .nav-points-menu .nav-menu-btn:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.app-nav .nav-points-menu .nav-menu-btn:active {
+    transform: scale(1);
+    opacity: 1;
 }
 /* logined */
+
+
+/* nav-menu-container */
+.menu-nav-helper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 109;
+    background-color:#141414a0;
+}
+.nav-menu-container {
+    width: 350px;
+    height: 100vh;
+    position: fixed;
+    background-color: #141414;
+    z-index: 110;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-family: "Poppins",sans-serif;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    /* position: relative; */
+    right:  -100%;
+    animation: menu-container .3s forwards;
+}
+@keyframes menu-container {
+    from{right: -100%;}
+    to{right: 0;}
+}
+.nav-menu-container .close-menu-c {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: max-content;
+    border: none;
+    height: max-content;
+    background-color: transparent;
+    color: #6F18DE;
+    cursor: pointer;
+    transform: all .3s;
+    opacity: 1;
+    transform: scale(1);
+}
+.nav-menu-container .close-menu-c i {
+    font-size: 25px;
+}
+.nav-menu-container .close-menu-c:hover {
+    opacity: .5;
+    transform: scale(1.03);
+}
+.nav-menu-container .close-menu-c:active {
+    opacity: 1;
+    transform: scale(1);
+}
+.nav-menu-container .menu-header {
+    width: max-content;
+    position: relative;
+}
+.nav-menu-container .menu-header h1 {
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--text-color);
+}
+.nav-menu-container .menu-header i {
+    position: absolute;
+    top: -3px;
+    right: -17px;
+    color: var(--yellow);
+}
+
+.nav-menu-container .menu-n-user-details {
+    display: flex;
+    flex-direction: column;
+    background-color: #1D1E1F;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+    gap: 10px;
+    border: 1px solid white;
+}
+.nav-menu-container .menu-n-user-details .mn-user-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-menu-container .menu-n-user-details .mn-user-details i {
+    padding: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 25px;
+    border-radius: 5px;
+    color: #6F18DE;
+    background-color: #6F18DE;
+    color: var(--text-color);
+}
+.nav-menu-container .menu-n-user-details .mn-user-details span {
+    font-size: 17px;
+    /* 6F18DE */
+}
+.nav-menu-container .menu-list-div {
+    border-radius: 5px;
+    background-color: #1D1E1F;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid white;
+}
+.nav-menu-container .menu-list-div span:nth-child(1) {
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+    font-size: 15px;
+}
+.nav-menu-container .menu-list-div a {
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    background-color: #141414;
+    color: var(--text-color);
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.nav-menu-container .menu-list-div a span {
+    font-size: 13px;
+}
+.nav-menu-container .menu-list-div a:hover {
+    transform: scale(1.03);
+    opacity: .5;
+}
+.nav-menu-container .menu-list-div a:active {
+    transform: scale(1);
+    opacity: 1;
+}
+.nav-menu-container .menu-n-account {
+    padding: 10px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    background-color: #1D1E1F;
+}
+.nav-menu-container .menu-n-account span:nth-child(1) {
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+    font-size: 15px;
+
+}
+.nav-menu-container .menu-n-account a {
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    background-color: #141414;
+    color: var(--text-color);
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.nav-menu-container .menu-n-account a:hover {
+    transform: scale(1.03);
+    opacity: .5;
+}
+.nav-menu-container .menu-n-account a:active {
+    transform: scale(1);
+    opacity: 1;
+}
+.nav-menu-container .menu-n-account a span {
+    font-size: 13px;
+}
+.nav-menu-container .menu-n-account  button {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 35px;
+    border: none;
+    background-color: #141414;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.nav-menu-container .menu-n-account  button:hover {
+    transform: scale(1.03);
+    opacity: .5;
+}
+.nav-menu-container .menu-n-account  button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+.nav-menu-container .menu-n-account  button span {
+    font-size: 16px;
+}
+/* nav-menu-container */
+@media only screen and (max-width: 700px) {
+    .app-nav .link-wrapper  {
+        gap: 20px;
+    }
+   
+}
+
+@media only screen and (max-width: 610px) {
+    .app-nav {
+        padding: 0 5px 0 5px;
+    }
+    .app-nav .nav-logo-txt h1 {
+        font-size: 20px;
+    }
+    
+    .app-nav .link-wrapper .link-list  {
+        display: none;
+    }
+    .app-nav .link-wrapper .nav-login-reg-btn  {
+        display: none;
+    }
+    .app-nav .link-wrapper .lw-menu-btn {
+        display: flex;
+    }
+
+    /* is loggind */
+    .app-nav .nav-points-menu {
+        gap: 5px;
+    }
+    .app-nav .nav-points-menu .nav-menu-btn {
+        margin-left: 10px;
+    }
+    .app-nav .nav-points-menu .npm-div {
+        width: 100px;
+        padding: 5px;
+    }
+    .app-nav .nav-points-menu .npm-div:nth-child(2) {
+        width: 120px;
+    } 
+    .app-nav .nav-points-menu .npm-div span {
+        font-size: 14px;
+    }
+    /* is loggind */
+}
+@media only screen and (max-width: 430px) {
+    .app-nav .nav-logo-txt h1 span{
+        display: none;
+    }
+}
