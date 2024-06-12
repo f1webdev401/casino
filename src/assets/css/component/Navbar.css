@@ -7,6 +7,7 @@
     z-index: 100;
     justify-content: space-between;
     padding: 0 20px;
+    border-bottom: 1px solid white;
 }
 .app-nav .nav-logo-txt {
     width: max-content;
@@ -397,6 +398,29 @@
 .nav-menu-container .menu-n-account  button span {
     font-size: 16px;
 }
+
+.nav-menu-container div .nlm-wrapper {
+    border: 1px solid white;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--blue-gray);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.769);
+    text-decoration: none;
+    font-family: "Poppins",sans-serif;
+}
+.nav-menu-container div .nlm-wrapper i {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-menu-container div .nlm-wrapper span {
+    margin-left: 10px;
+}
 /* nav-menu-container */
 @media only screen and (max-width: 700px) {
     .app-nav .link-wrapper  {
@@ -407,7 +431,7 @@
 
 @media only screen and (max-width: 610px) {
     .app-nav {
-        padding: 0 5px 0 5px;
+        padding: 0 15px 0 5px;
     }
     .app-nav .nav-logo-txt h1 {
         font-size: 20px;
@@ -443,7 +467,7 @@
     /* is loggind */
 }
 @media only screen and (max-width: 430px) {
-    .app-nav .nav-logo-txt h1 span{
+    /* .app-nav .nav-logo-txt h1 span{
         display: none;
-    }
+    } */
 }

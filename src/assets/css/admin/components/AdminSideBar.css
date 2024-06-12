@@ -1,0 +1,54 @@
+.asb-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #202022;
+    width: 300px;
+    box-shadow: 0 0 5px black;
+    padding: 20px;
+}
+
+.asb-container .asb-header {
+    padding: 10px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid white;
+}
+.asb-container .asb-header h1 {
+    color: #F7F7F7;
+}
+.asb-container .asb-header h1 span {
+    background-color: #E59314;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: #202022;
+}
+
+.asb-container .asb-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+.asb-container .asb-links  a {
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #837f7f;
+    padding: 10px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.asb-container .asb-links  a:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.asb-container .asb-links  a:active {
+    transform: scale(1);
+    opacity: 1;
+}

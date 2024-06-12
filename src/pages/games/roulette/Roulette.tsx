@@ -1,10 +1,19 @@
 import '../../../assets/css/pages/games/roulette/Roulette.css'
 import { useRef, useState } from 'react'
+import rouletteSound from '../../../assets/audio/newaudio.mp3'
+import winSound from '../../../assets/audio/price.mp3'
+import UserContext from '../../../context/UserContext'
+import { useContext } from 'react'
+import { update , ref } from 'firebase/database'
+import { db } from '../../../firebase-config'
 const Roulette = () => {
+    const {userD,setUserD} = useContext(UserContext)
     const rouletteBox = useRef<any>(null)
     const [price,setPrice] = useState<any>('')
     const [btnDisabled ,setBtnDisabled] = useState<boolean>(false)
     const [isSpin,setIsSpin] = useState<any>(false)
+    const audioRef = useRef<any>(null)
+    const winSoundRef = useRef<any>(null)
     const roulette_numbers = [
         [3557,3560],
         [3565,3571],
@@ -73,24 +82,35 @@ const Roulette = () => {
         {value:"Try Again",color: "var(--yellow)",price:"Try Again"},
         {value: "20 PHP",color: "var(--green)",price:"20 PHP"},
     ]
+   
+    const StartSpin = async () => {
+        const randomNum = [0,2,8,12,17,20,24,26,28,30,3,15,1,18,26]
+        const mathRand = Math.floor(Math.random() * randomNum.length)
 
-    const StartSpin = () => {
         setIsSpin(false)
         setBtnDisabled(true)
+        setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) - 20}))
         rouletteBox.current.style.transform = `rotate(0deg)`
         rouletteBox.current.style.transition = `none`
         rouletteBox.current.style.animation = 'start .5s forwards'
         
-        const spinList = Math.floor(Math.random() * (roulette_numbers.length - 1)) + 1
+        // const spinList = Math.floor(Math.random() * (roulette_numbers.length - 1)) + 1  
+        const spinList : number = randomNum[mathRand]
+        // console.log(roulette_numbers.length)
+        // console.log(spinList,'asd')
+        // console.log(roulette_numbers[32])
+        // console.log(spinList)
         // console.log(roulette_numbers.length)
         console.log(spinList)
-        console.log(roulette_numbers.length)
+        await update(ref(db,userD.uid),{
+            credits: parseInt(userD.credits) - 20
+        })
         setTimeout(() => {
-
+            audioRef.current.play()
             if(roulette_numbers[spinList].length ===1 ){
                 console.log(data[spinList])
                 rouletteBox.current.style.transform = `rotate(${-roulette_numbers[spinList][0]}deg)`
-                rouletteBox.current.style.transition = `all ease-in-out 15s`
+                rouletteBox.current.style.transition = `all ease-in-out 14s`
             }
             else {
                 const price = (min:number,max:number) => {
@@ -99,19 +119,40 @@ const Roulette = () => {
                 console.log('price', price(roulette_numbers[spinList][0],roulette_numbers[spinList][1]))
         
                 rouletteBox.current.style.transform = `rotate(-${price(roulette_numbers[spinList][0],roulette_numbers[spinList][1])}deg)`
-                rouletteBox.current.style.transition = `all ease-in-out 15s`
+                rouletteBox.current.style.transition = `all ease-in-out 14s`
             }
         },100)
         
         setTimeout(() => {
             console.log(data[spinList])
             setPrice(data[spinList])
+            audioRef.current.pause()
+            audioRef.current.currentTime = 0
+            winSoundRef.current.play()
             rouletteBox.current.style.animation = ''
-        },15500)
+        },14500)
+    }
+    const OkButtonHandler = async () => {
+        if(price.price === "100 Lucky Points") {
+            setUserD((prev:any) => ({...prev,luckyPoints:parseInt(userD.luckyPoints) + 100}))
+            await update(ref(db,userD.uid),{
+                luckyPoints: parseInt(userD.luckyPoints) + 100
+            })
+        }
+        if(price.price === "20 PHP") {
+            setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) + 20}))
+            await update(ref(db,userD.uid),{
+                credits: parseInt(userD.credits) + 20
+            })
+        }
+        setPrice(null)
+        setBtnDisabled(false)
     }
   return (
     <section className='roulette-container'>
+        <audio ref={winSoundRef}  src={winSound} style={{display:'none'}}></audio>
         <div className="roulette-c-bg">
+        <audio style={{display: 'none'}}  ref={audioRef} src={rouletteSound}></audio>
 
         <div className="roulette-header">
             <h1>500k Jackpot Price. Play now!</h1>
@@ -134,24 +175,29 @@ const Roulette = () => {
         </div>
         
         <div className="roulette-action-button">
+            {parseInt(userD?.credits) < 20 ?
+            <button disabled={true} >Not Enough Credtis</button>:
             <button disabled={btnDisabled} onClick={() => setIsSpin(true)}>Start Spin</button>
+
+            }
         </div>
         </div>
 
 
         
         {price && 
-        
         <div className="roulette-price-model">
             <div className="roulette_price_container">
                 <div className="roulette-price-text">
+                    {price.price === "Try Again" ? 
+                        <h1>Oppss !</h1>
+                    : 
                     <h1>Congratulation You Won!</h1>
+                }
                     <h1>{price.price}</h1>
                 </div>
                     <div className="roulette_price_btn">
-                        <button onClick={() => {setPrice(null)
-                        setBtnDisabled(false)
-                        }}>Ok</button>
+                        <button onClick={OkButtonHandler}>Ok</button>
                     </div>
             </div>                    
         </div>

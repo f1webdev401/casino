@@ -6,12 +6,27 @@ import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
 import Aboutus from "./pages/Aboutus";
 import Affiliates from "./pages/Affiliates";
-
-
+import CashinsPage from "./pages/transactions/CashinsPage";
+import WithdrawPage from "./pages/transactions/WithdrawPage";
+import DepositPage from "./pages/transactions/DepositPage";
+import WithrdawalsPage from "./pages/transactions/WithrdawalsPage";
+import AccountPage from "./pages/account/AccountPage";
+import AdminHomePage from "./pages/admin/AdminHomePage";
+import AdminUser from "./pages/admin/components/AdminUser";
+import AdminWithdraw from "./pages/admin/components/AdminWithdraw";
+import Games from "./pages/games/Games";
+import { SignupProvider } from "./context/SignupContext";
+import { UserContextProvider } from "./context/UserContext";
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <App />,
+        element:( 
+            <UserContextProvider>
+                    <SignupProvider>
+                        <App /> 
+                    </SignupProvider>
+            </UserContextProvider>
+                ),
         children: [
             {
                 path: '',
@@ -36,6 +51,46 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register/>
+            },
+            {
+                path:'cashins',
+                element: <CashinsPage />
+            },
+            {
+                path:'withdrawals',
+                element: <WithrdawalsPage/>
+            },
+            {
+                path: 'deposit',
+                element: <DepositPage />
+            },
+            {
+                path:'withdraw',
+                element: <WithdrawPage />
+            },
+            {
+                path:'account',
+                element: <AccountPage/>
+            },
+            {
+                path:'games',
+                element: <Games/>
+            }
+        ]
+    }
+    
+    ,
+    {
+        path:'/smmadminpage',
+        element: <AdminHomePage/>,
+        children : [
+            {
+                path: 'adminusers',
+                element: <AdminUser/>
+            },
+            {
+                path: 'adminwithdrawals',
+                element: <AdminWithdraw/>
             }
         ]
     }

@@ -1,0 +1,111 @@
+.account-p-container {
+    height: calc(100vh - 80px);
+    background-color: var(--blue-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-p-body {
+    width: 100%;
+    max-width: 500px;
+    height: calc(100% - (50px));
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--light-black);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.account-p-body .account-p-header h1 {
+    color: var(--text-color);
+    font-family: "Poppins",sans-serif;
+}
+
+.account-p-details  {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    background-color: var(--blue-gray);
+    color: var(--text-color);
+}
+.account-p-details .apd-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.account-p-details .apd-box span {
+    letter-spacing: 1.5px;
+}
+.account-p-details button {
+    margin-left: auto;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    background-image: linear-gradient(to right , #CE9508 , #ce9608ba);
+    font-weight: 600;
+    color: var(--blue-gray);
+    cursor: pointer;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.account-p-details button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.account-p-details button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.account-p-referral .account-p-r-header span {
+    font-family: "Poppins",sans-serif;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: var(--text-color);
+    font-weight: 600;
+    opacity: .8;
+}
+.account-p-referral .account-pr-code {
+    border: 1px solid white;
+    padding: 10px;
+    background-color: var(--blue-gray);
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    display: flex;
+    gap: 10px;
+    color: var(--text-color)
+}
+.account-p-referral .account-pr-code span {
+    opacity: .8;
+    letter-spacing: 1px;
+}
+.account-p-referral .account-pr-code button {
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.account-p-referral p {
+    margin-top: 10px;
+    background-color: var(--green);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+}
+.account-p-referral p span {
+    color: var(--text-color);
+}
+.account-p-referral p i {
+    color: var(--blue-gray);
+}

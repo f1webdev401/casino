@@ -33,7 +33,7 @@ const Aboutus = () => {
         </div>
 
         <div className="ap-get-started">
-          <NavLink to={""}>Get Started</NavLink>
+          <NavLink to={"/register"}>Get Started</NavLink>
         </div>
     </section>
   )

@@ -1,0 +1,74 @@
+.games-container {
+    height: calc(100vh - 80px);
+    background-color: var(--blue-gray);
+}
+
+.games-p-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--light-black);
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.games-p-wrapper h1 {
+    font-family: "Poppins",sans-serif;
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+    opacity: .9;
+}
+.games-p-wrapper h1 span {
+    text-decoration: underline;
+}
+.games-p-event {
+    margin-top: 20px;
+}
+.games-p-event .games-pe-header {
+    font-family: "Poppins",sans-serif;
+    color: rgba(255, 255, 255, 0.782);
+    padding: 5px 0;
+}
+.games-p-event .games-pe-header span {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+.games-p-event .games-event-list {
+    display: flex;
+}
+.games-p-event .games-event-list a {
+    border: 1px solid white;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    background-color: var(--blue-gray);
+    color: rgba(255, 255, 255, 0.811);
+    text-decoration: none;
+}
+.games-p-event .games-event-list a span , p {
+    letter-spacing: 1.5px;
+    font-size: 14px;
+}
+.games-p-event .games-event-list a p {
+    color: var(--yellow);
+}
+.games-p-event .games-event-list a  .game-e-image{
+    height: 150px;
+    width: 100%;
+}
+.games-p-event .games-event-list a  .game-e-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.games-comming-soon{
+    margin-top: 20px;
+}
+.games-comming-soon span {
+    color: var(--yellow);
+    font-family: "Poppins",sans-serif;
+    opacity: .7;
+}

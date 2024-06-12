@@ -27,6 +27,25 @@
 .login-container .login-c-wrapper form .login-input-wrapper{
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+.login-container .login-c-wrapper form .login-input-wrapper i {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    color: rgba(255, 255, 255, 0.824);
+    cursor: pointer;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.login-container .login-c-wrapper form .login-input-wrapper i:hover {
+    transform: scale(1.05);
+    opacity: .6;
+}
+.login-container .login-c-wrapper form .login-input-wrapper i:active {
+    transform: scale(1);
+    opacity: 1;
 }
 .login-container .login-c-wrapper form .login-input-wrapper label {
     font-family: "Poppins",sans-serif;
@@ -47,7 +66,7 @@
     letter-spacing: 1.5px;
 }
 
-.login-container .login-c-wrapper form button {
+.login-container .login-c-wrapper form .lc-login-button {
     height: 35px;
     font-size: 17px;
     font-family: "Poppins",sans-serif;
@@ -62,11 +81,11 @@
     transform: scale(1);
     opacity: 1;
 }
-.login-container .login-c-wrapper form button:hover {
+.login-container .login-c-wrapper form .lc-login-button:hover {
     transform: scale(1.03);
     opacity: .7;
 }
-.login-container .login-c-wrapper form button:active {
+.login-container .login-c-wrapper form .lc-login-button:active {
     transform: scale(1);
     opacity: 1;
 }
@@ -83,4 +102,46 @@
 .login-container .login-c-wrapper form .login-d-account a {
     color: rgba(0, 0, 255, 0.876);
     text-shadow: 0 0 2px white;
+}
+.lc-success-signup {
+    font-family: "Poppins",sans-serif;
+    background-color: var(--green);
+    padding: 5px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lc-success-signup button {
+    padding: 5px;
+    cursor: pointer;
+}
+.lc-success-signup span {
+    color: white;
+    opacity: .8;
+}
+.lc-error-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Poppins",sans-serif;
+    background-color: var(--red);
+    padding: 5px;
+    border-radius: 5px;
+}
+.lc-error-message button {
+    padding: 5px;
+    cursor: pointer;
+}
+.lc-error-message span {
+    color: white;
+    opacity: .8;
+    letter-spacing: 1px;
+}
+@media only screen and (max-width: 450px) {
+    .login-container .login-c-wrapper {
+        padding: 10px;
+        border-radius: 0;
+    }
 }

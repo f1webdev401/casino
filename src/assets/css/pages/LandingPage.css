@@ -1,5 +1,5 @@
 .landing-page-container {
-    background-image: url('../../images/bg.jpg');
+    background-image: radial-gradient(#19191B, #050505);
     background-size: cover;
     background-repeat: no-repeat;
     border: 1px solid black;
@@ -45,7 +45,7 @@
     font-family: "Poppins",sans-serif;
     opacity: .5;
 }
-.lp-main-headline-container .lp-headline .lp-headline-btn button {
+.lp-main-headline-container .lp-headline .lp-headline-btn a {
     padding: 5px 15px;
     font-family: "Poppins";
     letter-spacing: 1.5px;
@@ -55,30 +55,31 @@
     transition: all .3s;
     transform: scale(1);
     opacity: 1;
+    text-decoration: none;
 }
-.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(1) {
+.lp-main-headline-container .lp-headline .lp-headline-btn a:nth-child(1) {
     background-color: var(--green);
     color: #fff;
 }
-.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(1):hover {
+.lp-main-headline-container .lp-headline .lp-headline-btn a:nth-child(1):hover {
     transform: scale(1.3);
     opacity: .8;
 }
-.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(1):active {
+.lp-main-headline-container .lp-headline .lp-headline-btn a:nth-child(1):active {
     transform: scale(1);
     opacity: 1;
 }
-.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(2) {
+.lp-main-headline-container .lp-headline .lp-headline-btn a:nth-child(2) {
     border: 1px solid var(--green);
     background-color: transparent;
     color: var(--green);
 }
-.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(2):hover {
+.lp-main-headline-container .lp-headline .lp-headline-btn a:nth-child(2):hover {
     transform: scale(1.3);
     opacity: .8;
     z-index: 2;
 }
-.lp-main-headline-container .lp-headline .lp-headline-btn button:nth-child(2):active {
+.lp-main-headline-container .lp-headline .lp-headline-btn a:nth-child(2):active {
     transform: scale(1);
     opacity: 1;
     z-index: 2;
@@ -185,7 +186,7 @@
     color: var(--yellow);
 }
 
-.lp-banner .lp-banner-text button {
+.lp-banner .lp-banner-text a {
     padding: 6px 20px;
     font-family: "Poppins",sans-serif;
     letter-spacing: 1.5px;
@@ -195,8 +196,20 @@
     font-weight: 600;
     color: #080D20;
     cursor: pointer;
+    text-decoration: none;    
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
 }
 
+.lp-banner .lp-banner-text a:hover {
+    transform: scale(1.05);
+    opacity: .6;
+}
+.lp-banner .lp-banner-text a:active {
+    transform: scale(1);
+    opacity: 1;
+}
 .lp-platform {
     width: 100%;
     max-width: 1200px;

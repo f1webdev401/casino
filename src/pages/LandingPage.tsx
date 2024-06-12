@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import '../assets/css/pages/LandingPage.css'
 import HeadlineImg from '../assets/images/headline-img.png'
 import PlatformImg from '../assets/images/platform-bg.png'
@@ -15,8 +16,8 @@ const LandingPage = () => {
                 </div>
                 <p>Win Big Jackpot Today.</p>
                 <div className="lp-headline-btn">
-                    <button>Play now!</button>
-                    <button>Register</button>
+                    <NavLink to={'games'}>Play now!</NavLink>
+                    <NavLink to={'register'}>Register</NavLink>
                 </div>
             </div>
             <div className="lp-headline-image-container">
@@ -58,7 +59,7 @@ const LandingPage = () => {
         <div className="lp-banner">
             <div className="lp-banner-text">
             <h1>TOP UP 200 PHP GET FREE 100 CREDITS</h1>
-            <button>Get Started</button>
+            <NavLink to={'register'}>Get Started</NavLink>
             </div>
        
         </div>

@@ -1,9 +1,11 @@
 .register-container {
-    height: calc(100vh - 80px);
+    height: max-content;
     background-color: var(--blue-gray);
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: calc(100vh - 80px);
+    padding: 10px;
 }
 
 .register-form-wrapper {
@@ -19,8 +21,7 @@
 .register-form-wrapper h1 , h2 {
     color: #ffffffcf;
 }
-.register-form-wrapper h2 {
-}
+
 .register-form-wrapper  form {
     display: flex;
     flex-direction: column;
@@ -31,6 +32,21 @@
     display: flex;
     flex-direction: column;
     color: #ffffffc9;
+    position: relative;
+}
+.register-form-wrapper  form  .register-input-wrapper i {
+    position: absolute;
+    bottom: 9px;
+    right: 10px;
+    transition: all .3s;
+    transform: scale(1);
+    cursor: pointer;
+}
+.register-form-wrapper  form  .register-input-wrapper i:hover {
+    transform: scale(1.05);
+}
+.register-form-wrapper  form  .register-input-wrapper i:active {
+    transform: scale(1);
 }
 .register-form-wrapper  form  .register-input-wrapper input {
     height: 35px;
@@ -49,7 +65,7 @@
     letter-spacing: 1.5px;
 }
 
-.register-form-wrapper  form button {
+.register-form-wrapper  form .register-btn {
     height: 35px;
     letter-spacing: 1.5px;
     font-size: 16px;
@@ -65,11 +81,11 @@
     transform: scale(1);
     
 }
-.register-form-wrapper  form button:hover {
+.register-form-wrapper  form .register-btn:hover {
     opacity: .7;
     transform: scale(1.03);
 }
-.register-form-wrapper  form button:active {
+.register-form-wrapper  form .register-btn:active {
     opacity: 1;
     transform: scale(1);
 }
@@ -81,4 +97,47 @@
 .register-form-wrapper  form .reg-al-account a {
     text-shadow: 0px 0px 2px wheat;
     letter-spacing: 1.5px;
+}
+
+
+/* .error */
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--red);
+    padding: 5px;
+    border-radius: 5px;
+}
+.error-container span {
+    color: white;
+    opacity: .8;
+    letter-spacing: 1px;
+}
+.error-container button {
+    padding: 5px;
+    cursor: pointer;
+}
+/* .error */
+
+@media only screen and (max-width: 450px) {
+    .register-container {
+        padding: 0;
+    }
+    
+    .register-form-wrapper {
+
+        border-radius: 0;
+        padding: 5px;
+    }
+    .register-form-wrapper h1  {
+        
+        font-size: 18px;
+        letter-spacing: 1.5px;
+    }
+    .register-form-wrapper h2  {
+        
+        font-size: 17px;
+        letter-spacing: 1.5px;
+    }
 }

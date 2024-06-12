@@ -1,0 +1,130 @@
+.cashins-p-container {
+    height: calc(100vh - 80px);
+    background-color: var(--blue-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cashins-p-container .cashin-p-body {
+    width: 100%;
+    max-width: 450px;
+    height: calc(100% - (50px));
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--light-black);
+    
+}
+.cashin-p-body .cashin-p-header h1 {
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: var(--text-color);
+} 
+.cashin-p-data-wrapper  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    height: calc(100% - (130px) );
+    margin-top: 10px;
+    overflow-y: auto;
+}
+.cashin-p-data-wrapper .cashin-p-data {
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid white;
+    background-color: #1E232E;
+    border-radius: 3px;
+    padding: 7px;
+    height: 57px;
+}
+
+.cashin-p-body .cashin-p-data-wrapper .cashin-p-data .cashin-p-stat {
+    border: 1px solid white;
+    height: 100%;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    background-color: var(--green);
+    color: var(--text-color);
+}
+.cashin-p-data-wrapper .cashin-p-data .cashin-p-details {
+    margin-left: 15px;
+    font-family: "Poppins",sans-serif;
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+}
+.cashin-p-data-wrapper .cashin-p-data .cashin-p-amount {
+    margin-left: auto;
+    font-family: "Poppins",sans-serif;
+    color: var(--green);
+    letter-spacing: 1.5px;
+}
+
+.cashin-p-body .cpbody-paginator {
+    margin-top:10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: "Poppins",sans-serif;
+}
+.cashin-p-body .cpbody-paginator span {
+    
+}
+.cashin-p-body .cpbody-paginator button {
+    padding: 5px 20px;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.cashin-p-body .cpbody-paginator button:nth-child(1) {
+    border: 1px solid var(--yellow);
+    background-color: transparent;
+    color: var(--yellow);
+}
+.cashin-p-body .cpbody-paginator .cpbodyp-next {
+    color: rgba(255, 255, 255, 0.801);
+    background-image: linear-gradient(to right ,#e1a2037e,#e1a203d8);
+}
+.cashin-p-body .cpbody-paginator button:hover {
+    transform: scale(1.03);
+    opacity: .5;
+}
+.cashin-p-body .cpbody-paginator button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media only screen and (max-width:500px) {
+    .cashins-p-container .cashin-p-body {
+        height: 100%;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .cashin-p-body .cashin-p-header h1 {
+        font-size: 17px;
+    }
+    .cashin-p-body .cashin-p-data-wrapper .cashin-p-data {
+        height: 50px;
+    }
+    .cashin-p-data-wrapper .cashin-p-data .cashin-p-details {
+        font-size: 13px;
+    }
+    .cashin-p-data-wrapper .cashin-p-data .cashin-p-amount {
+        font-size: 13px;
+    }
+}

@@ -1,7 +1,8 @@
 .about-container {
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--blue-gray);
     padding: 20px 0;
+    height: max-content;
 }
 .about-container .ap-header {
     width: 100%;
@@ -89,4 +90,15 @@
     padding: 5px 10px;
     border-radius: 10px;
     color: var(--yellow);
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+.about-container .ap-get-started a:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.about-container .ap-get-started a:active {
+    transform: scale(1);
+    opacity: 1;
 }
