@@ -16,7 +16,6 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth,(currentUser) => {
       setUser(currentUser)
-      console.log(currentUser)
       if(!currentUser) {
           setUserD(null)
           return;
@@ -24,7 +23,6 @@ function App() {
       const userRef = ref(db,`users/${currentUser?.uid}`)
       onValue(userRef,(snapshot) => {
         const data = snapshot.val()
-        console.log(data)
         setUserD({...data,...currentUser})
       })
     })

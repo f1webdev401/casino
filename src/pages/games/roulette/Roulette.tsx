@@ -54,28 +54,28 @@ const Roulette = () => {
         {value: "100 Lucky Points",color: "var(--green)",price:"100 Lucky Points"},
         {value:"Try Again",color: "var(--red)",price:"Try Again"},
         {value: "20 PHP",color: "var(--yellow)",price:"20 PHP"},
-        {value: "200 Lucky Points",color: "var(--green)",price:"200 Lucky Points"},
+        {value: "100 Lucky Points",color: "var(--green)",price:"100 Lucky Points"},
         {value: "20 PHP",color: "var(--red)",price:"20 PHP"},
-        {value: "300 Lucky Points",color: "var(--yellow)",price:"300 Lucky Points"},
+        {value: "100 Lucky Points",color: "var(--yellow)",price:"100 Lucky Points"},
         {value: "20 PHP",color: "var(--green)",price:"20 PHP"},
         {value:"Try Again",color: "var(--red)",price:"Try Again"},
         {value: "100 PHP",color: "var(--yellow)",price:"100 PHP"},
-        {value: "400 Lucky Points",color: "var(--green)",price:"400 Lucky Points"},
+        {value: "100 Lucky Points",color: "var(--green)",price:"100 Lucky Points"},
         {value: "200 PHP",color: "var(--red)",price:"200 PHP"},
         {value:"Try Again",color: "var(--yellow)",price:"Try Again"},
         {value: "20 PHP",color: "var(--green)",price:"20 PHP"},
-        {value: "500 Lucky Points",color: "var(--red)",price:"500 Lucky Points"},
+        {value: "100 Lucky Points",color: "var(--red)",price:"100 Lucky Points"},
         {value: "20 PHP",color: "var(--yellow)",price:"20 PHP"},
         {value: "100 Lucky Points",color: "var(--green)",price:"100 Lucky Points"},
         {value:"Try Again",color: "var(--red)",price:"Try Again"},
         {value: "100 Lucky Points",color: "var(--yellow)",price:"100 Lucky Points"},
         {value: "⭐ Jackpot ⭐",color: "var(--light-black)",price:"100 Lucky Points"},
         {value:"Try Again",color: "var(--red)",price:"Try Again"},
-        {value: "300 Lucky Points",color: "var(--yellow)",price:"300 Lucky Points"},
+        {value: "100 Lucky Points",color: "var(--yellow)",price:"100 Lucky Points"},
         {value: "20 PHP",color: "var(--green)",price:"20 PHP"},
         {value: "20 PHP",color: "var(--red)",price:"20 PHP"},
         {value:"Try Again",color: "var(--yellow)",price:"Try Again"},
-        {value: "400 Lucky Points",color: "var(--green)",price:"400 Lucky Points"},
+        {value: "100 Lucky Points",color: "var(--green)",price:"100 Lucky Points"},
         {value:"Try Again",color: "var(--red)",price:"Try Again"},
         {value: "20 PHP",color: "var(--yellow)",price:"20 PHP"},
         {value:"Try Again",color: "var(--green)",price:"Try Again"},
@@ -85,7 +85,7 @@ const Roulette = () => {
     ]
    
     const StartSpin = async () => {
-        const randomNum = [0,2,8,12,17,20,24,26,28,30,3,15,1,18,26]
+        const randomNum = [0,2,8,12,17,20,24,26,28,30,3,15,1,18,26,4,6,10,14,16,21,25,31]
         const mathRand = Math.floor(Math.random() * randomNum.length)
 
         setIsSpin(false)
@@ -95,21 +95,15 @@ const Roulette = () => {
         rouletteBox.current.style.transition = `none`
         rouletteBox.current.style.animation = 'start .5s forwards'
         
-        // const spinList = Math.floor(Math.random() * (roulette_numbers.length - 1)) + 1  
+       
         const spinList : number = randomNum[mathRand]
-        // console.log(roulette_numbers.length)
-        // console.log(spinList,'asd')
-        // console.log(roulette_numbers[32])
-        // console.log(spinList)
-        // console.log(roulette_numbers.length)
-        console.log(spinList)
+     
         await update(ref(db,`users/${userD.uid}`),{
             credits: parseInt(userD.credits) - 20
         })
         setTimeout(() => {
             audioRef.current.play()
             if(roulette_numbers[spinList].length ===1 ){
-                console.log(data[spinList])
                 rouletteBox.current.style.transform = `rotate(${-roulette_numbers[spinList][0]}deg)`
                 rouletteBox.current.style.transition = `all ease-in-out 14s`
             }
@@ -117,7 +111,6 @@ const Roulette = () => {
                 const price = (min:number,max:number) => {
                     return Math.floor(Math.random() * ((max - min) + 1)) + min;
                 }
-                console.log('price', price(roulette_numbers[spinList][0],roulette_numbers[spinList][1]))
         
                 rouletteBox.current.style.transform = `rotate(-${price(roulette_numbers[spinList][0],roulette_numbers[spinList][1])}deg)`
                 rouletteBox.current.style.transition = `all ease-in-out 14s`
@@ -125,7 +118,6 @@ const Roulette = () => {
         },100)
         
         setTimeout(() => {
-            console.log(data[spinList])
             setPrice(data[spinList])
             audioRef.current.pause()
             audioRef.current.currentTime = 0

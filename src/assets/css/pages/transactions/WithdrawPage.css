@@ -270,4 +270,34 @@
     .withdraw-p-body .withdraw-p-header h1 {
         font-size: 17px;
     }
+
+    .withdraw-error-message {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+        background-color: var(--red);
+        padding: 5px 10px;
+        font-family: "Poppins",sans-serif;
+        border-radius: 5px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        border: 1px solid var(--yellow);
+        color: rgba(255, 255, 255, 0.807);
+
+
+        width: 90%;
+        margin: 0 auto;
+    }
+    .withdraw-error-message span {
+        letter-spacing: 1.5px;
+        font-size: 14px;
+    }
+    .withdraw-error-message button {
+        padding: 3px;
+        cursor: pointer;
+        font-size: 13px;
+    }
 }

@@ -7,8 +7,6 @@ import { useContext } from 'react'
 import SignupContext from '../context/SignupContext'
 const Navbar = ({user}:any) => {
     const {setSignupMessage} = useContext(SignupContext)
-    console.log('nav',user)
-    const isLogin = false
     const navigate = useNavigate()
     const [windowWidth,setWindowWidth] = useState<any>(window.innerWidth)
     const [menuBarOpen,setMenuBarOpen] = useState<boolean>(false)
@@ -23,7 +21,6 @@ const Navbar = ({user}:any) => {
             setWindowWidth(window.innerWidth)
         }
         window.addEventListener('resize',handleWidthResize)
-        console.log(windowWidth)
         return () => {
             window.removeEventListener('resize',handleWidthResize)
         }

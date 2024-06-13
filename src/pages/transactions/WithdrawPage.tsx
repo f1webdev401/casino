@@ -34,17 +34,14 @@ const WithdrawPage = () => {
       return;
     }
     if(!withdrawDetails.number || !withdrawDetails.amount) {
-      console.log("please enter amount")
       setErrorMessage("Please fill all Fields")
       return;
     }
     if(!numberRegex.test(withdrawDetails.amount)) {
-      console.log('error amount')
       setErrorMessage("Please Enter Valid Amount")
       return;
     } 
     if(!numberRegex.test(withdrawDetails.number)) {
-        console.log('error number')
         setErrorMessage("Please Enter Valid Number")
         return;
     }     
@@ -60,7 +57,6 @@ const WithdrawPage = () => {
   const ConfirmSubmitWithdrawal = async () => {
     if(userD) {
       try {
-        console.log(userD.credits)
         if(parseInt(userD?.credits) > 500) {
           await update(ref(db,`users/${userD?.uid}`) ,{
               withdrawals: userD?.withdrawals[0] === "null" ? 

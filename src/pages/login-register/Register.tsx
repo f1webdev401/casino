@@ -78,13 +78,10 @@ const Register = () => {
             setSignupMessage("Succesfully Register You can now Login")
             navigate('/login')
             setIsSubmitted(false)
-            console.log(user)
         }catch(e:any) {
             const errorMessage = e.message;
-            const errorCode = errorMessage.split(':').pop().trim(); // Extract the last part and remove leading/trailing whitespace
-            console.log(errorCode);
+            const errorCode = errorMessage.split(':').pop().trim();
             setErrorInput(`(${errorCode.slice(0)}`)
-            console.log(e)
             setIsSubmitted(false)
         }
     }

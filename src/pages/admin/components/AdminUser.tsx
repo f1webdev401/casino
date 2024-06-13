@@ -18,11 +18,15 @@ const AdminUser = () => {
       return;
     }
     try {
+      console.log(targetUser)
       if(targetUser.referralCode !== "") {
           get(child(ref(db), `users/${targetUser.referralCode}`))
           .then(async (snapshot) => {
             if(snapshot) {
               let user_ref = snapshot.val()
+              if(parseInt(creditsToAdd) < 200) {
+                return ;
+              }
               if(user_ref) {
                 console.log(user_ref.ownReferral,'this')
                 await update(ref(db,`users/${targetUser.referralCode}`),{
@@ -69,7 +73,6 @@ const AdminUser = () => {
     const usersRef = ref(db,'users')
     onValue(usersRef,(snapshot) => {
       const data = snapshot.val()
-      console.log(data)
       let dataKeys :any = Object.keys(data)
       // for(let i = 0; i < dataKeys.length ; i ++) {
       //   console.log(data.dataKeys[i])

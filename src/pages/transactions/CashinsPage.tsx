@@ -4,38 +4,7 @@ import { useContext } from 'react'
 import NeedLogin from '../../components/NeedLogin'
 const CashinsPage = () => {
     const {userD} = useContext(UserContext)
-    const data = [
-        {
-            type:'Gcash',
-            date:'May 16 2024',
-            amount: 200.00
-        },
-        {
-            type:'Gcash',
-            date:'May 16 2024',
-            amount: 200.00
-        },
-        {
-            type:'Gcash',
-            date:'May 16 2024',
-            amount: 200.00
-        },
-        {
-            type:'Gcash',
-            date:'May 16 2024',
-            amount: 200.00
-        },
-        {
-            type:'Gcash',
-            date:'May 16 2024',
-            amount: 200.00
-        },
-        {
-            type:'Gcash',
-            date:'May 16 2024',
-            amount: 200.00
-        }
-    ]
+  
   return (
     <section className='cashins-p-container'>
         <NeedLogin/>
@@ -46,7 +15,7 @@ const CashinsPage = () => {
             <div className="cashin-p-data-wrapper">
             {/* */}
             {userD && userD !== "loading" && userD?.cashins[0] !== "null" ? 
-                userD?.cashins.map((detail:any,index:number) => (
+                [...userD?.cashins].reverse().map((detail:any,index:number) => (
                     <div className="cashin-p-data" key={index}>
                     <div className="cashin-p-stat">
                         <i className="fa-solid fa-check"></i>

@@ -38,7 +38,6 @@ const Login = () => {
     setIsSubmitted(true)
     try {
       const user = await signInWithEmailAndPassword(auth,userDetail.email,userDetail.password)
-      console.log(user)
       setIsSubmitted(false)
       navigate('/games')
     }
