@@ -45,7 +45,7 @@ const CashinsPage = () => {
             </div>
             <div className="cashin-p-data-wrapper">
             {/* */}
-            {!userD && userD !== "loading" && userD?.cashins[0] !== "null" ? 
+            {userD && userD !== "loading" && userD?.cashins[0] !== "null" ? 
                 userD?.cashins.map((detail:any,index:number) => (
                     <div className="cashin-p-data" key={index}>
                     <div className="cashin-p-stat">

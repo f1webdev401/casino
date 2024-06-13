@@ -470,4 +470,9 @@
     /* .app-nav .nav-logo-txt h1 span{
         display: none;
     } */
+    .nav-menu-container {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    
 }

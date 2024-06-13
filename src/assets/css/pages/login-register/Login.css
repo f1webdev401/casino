@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--blue-gray);
+    padding: 10px;
 }
 .login-container .login-c-wrapper {
     border: 1px solid var(--yellow);
@@ -14,10 +15,12 @@
     border-radius: 10px;
 }
 .login-container .login-c-wrapper h1 ,h2 {
-    font-family: "Poppins",sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     color: rgba(245, 245, 245, 0.866);
 }
-
+.login-container .login-c-wrapper h1 {
+    font-size: 30px;
+}
 .login-container .login-c-wrapper form {
     display: flex;
     flex-direction: column;
@@ -142,6 +145,6 @@
 @media only screen and (max-width: 450px) {
     .login-container .login-c-wrapper {
         padding: 10px;
-        border-radius: 0;
+        border-radius: 5px;
     }
 }

@@ -18,8 +18,13 @@
     border: 1px solid var(--yellow);
     font-family: "Poppins",sans-serif;
 }
+.register-form-wrapper h1 {
+    font-size: 27px;
+    letter-spacing: 1.5px;
+}
 .register-form-wrapper h1 , h2 {
     color: #ffffffcf;
+   font-family: "Roboto Condensed", sans-serif;
 }
 
 .register-form-wrapper  form {
@@ -49,7 +54,7 @@
     transform: scale(1);
 }
 .register-form-wrapper  form  .register-input-wrapper input {
-    height: 35px;
+    height: 37px;
     padding-left: 5px;
     font-family: "Poppins",sans-serif;
     letter-spacing: 1.5px;
@@ -57,8 +62,9 @@
     border: 1px solid #ffffffc9;
     outline: none;
     color: #ffffffa6;
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: var(--light-black);
+    font-size: 17px;
 }
 .register-form-wrapper  form  .register-input-wrapper label {
     text-shadow: 0px 0px 2px black,0px 0px 2px black;
@@ -66,7 +72,7 @@
 }
 
 .register-form-wrapper  form .register-btn {
-    height: 35px;
+    height: 32px;
     letter-spacing: 1.5px;
     font-size: 16px;
     font-weight: 600;
@@ -79,7 +85,7 @@
     transition: all .3s;
     opacity: 1;
     transform: scale(1);
-    
+    margin-top: 10px;
 }
 .register-form-wrapper  form .register-btn:hover {
     opacity: .7;
@@ -88,6 +94,11 @@
 .register-form-wrapper  form .register-btn:active {
     opacity: 1;
     transform: scale(1);
+}
+.register-form-wrapper  form .reg-al-account {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 .register-form-wrapper  form .reg-al-account span{
     color: whitesmoke;
@@ -122,22 +133,26 @@
 
 @media only screen and (max-width: 450px) {
     .register-container {
-        padding: 0;
+        padding: 5px;
     }
     
     .register-form-wrapper {
 
         border-radius: 0;
-        padding: 5px;
+        padding: 20px 5px; 
     }
     .register-form-wrapper h1  {
         
-        font-size: 18px;
+        font-size: 23px;
         letter-spacing: 1.5px;
     }
     .register-form-wrapper h2  {
         
         font-size: 17px;
         letter-spacing: 1.5px;
+    }
+    .register-form-wrapper  form .reg-al-account span{
+        font-size: 13px;
+        margin-left: 10px;
     }
 }
