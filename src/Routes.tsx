@@ -17,6 +17,7 @@ import AdminWithdraw from "./pages/admin/components/AdminWithdraw";
 import Games from "./pages/games/Games";
 import { SignupProvider } from "./context/SignupContext";
 import { UserContextProvider } from "./context/UserContext";
+import RedeemPoints from "./pages/redeempoints/RedeemPoints";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
             {
                 path:'games',
                 element: <Games/>
+            },
+            {
+                path:'redeempoints',
+                element:<RedeemPoints/>
             }
         ]
     }

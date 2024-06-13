@@ -62,16 +62,17 @@ const Register = () => {
             setIsSubmitted(false)
             return
         }   
-
         try {
             const user = await createUserWithEmailAndPassword(auth ,userDetail.email,userDetail.password)
-            await set(ref(db ,`/${user.user.uid}`), {
+            await set(ref(db ,`users/${user.user.uid}`), {
                 phonenumber:userDetail.phonenumber,
                 referralCode:userDetail.referralCode,
                 credits:0,
                 luckyPoints:0,
                 ownReferral:user.user.uid,
-                email:userDetail.email
+                email:userDetail.email,
+                cashins:["null"],
+                withdrawals:["null"],
             })  
             await signOut(auth)
             setSignupMessage("Succesfully Register You can now Login")

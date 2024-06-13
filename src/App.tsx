@@ -12,13 +12,16 @@ import UserContext from "./context/UserContext";
 function App() {
 
   const [user,setUser] = useState<any>(null)
-  const [user_,setUser_] =useState<any>(null)
   const {userD,setUserD} = useContext(UserContext)
   useEffect(() => {
     onAuthStateChanged(auth,(currentUser) => {
       setUser(currentUser)
-      console.log(currentUser?.uid)
-      const userRef = ref(db,`${currentUser?.uid}`)
+      console.log(currentUser)
+      if(!currentUser) {
+          setUserD(null)
+          return;
+      }
+      const userRef = ref(db,`users/${currentUser?.uid}`)
       onValue(userRef,(snapshot) => {
         const data = snapshot.val()
         console.log(data)

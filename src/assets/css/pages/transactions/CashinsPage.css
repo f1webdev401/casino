@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px; 
-    height: calc(100% - (130px) );
+    height: calc(100% - (50px) );
     margin-top: 10px;
     overflow-y: auto;
 }
@@ -64,7 +64,17 @@
     color: var(--green);
     letter-spacing: 1.5px;
 }
-
+.cashin-p-data-wrapper .cashin-p-no-data {
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--yellow);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--light-black);
+}
 .cashin-p-body .cpbody-paginator {
     margin-top:10px;
     color: white;

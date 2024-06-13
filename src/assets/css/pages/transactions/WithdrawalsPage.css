@@ -26,8 +26,9 @@
     flex-direction: column;
     gap: 10px;
     margin-top: 20px;
-    height: calc(100% - (140px));
+    height: calc(100% - (60px));
     overflow-y: auto;
+    padding-bottom: 50px;
 }
 .withdrawals-p-details {
     display: flex;
@@ -72,10 +73,34 @@
     margin-left: auto;
     height: max-content;
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+}
+.withdrawals-p-details .withdrawals-p-amount span:nth-child(1) {
+    letter-spacing: 1.5px;
+}
+.withdrawals-p-details .withdrawals-p-amount span:nth-child(2) {
+    letter-spacing: 1.5px;
+    color: var(--red);
+    text-shadow: 0 0 2px black;
 }
 .withdrawals-p-details .withdrawals-p-amount span {
     color: var(--text-color);
     font-family: "Poppins",sans-serif;
+}
+
+.withdrawals-p-data .withdrawals-p-no-data {
+    background-color: var(--yellow);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--light-black);
+}
+.withdrawals-p-data .withdrawals-p-no-data span {
+    letter-spacing: 1.5px;
 }
 .withdrawals-p-pagination {
     margin-top: auto;

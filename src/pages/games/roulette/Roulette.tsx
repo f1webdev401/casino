@@ -6,6 +6,7 @@ import UserContext from '../../../context/UserContext'
 import { useContext } from 'react'
 import { update , ref } from 'firebase/database'
 import { db } from '../../../firebase-config'
+import NeedLogin from '../../../components/NeedLogin'
 const Roulette = () => {
     const {userD,setUserD} = useContext(UserContext)
     const rouletteBox = useRef<any>(null)
@@ -102,7 +103,7 @@ const Roulette = () => {
         // console.log(spinList)
         // console.log(roulette_numbers.length)
         console.log(spinList)
-        await update(ref(db,userD.uid),{
+        await update(ref(db,`users/${userD.uid}`),{
             credits: parseInt(userD.credits) - 20
         })
         setTimeout(() => {
@@ -135,13 +136,13 @@ const Roulette = () => {
     const OkButtonHandler = async () => {
         if(price.price === "100 Lucky Points") {
             setUserD((prev:any) => ({...prev,luckyPoints:parseInt(userD.luckyPoints) + 100}))
-            await update(ref(db,userD.uid),{
+            await update(ref(db,`users/${userD.uid}`),{
                 luckyPoints: parseInt(userD.luckyPoints) + 100
             })
         }
         if(price.price === "20 PHP") {
             setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) + 20}))
-            await update(ref(db,userD.uid),{
+            await update(ref(db,`users/${userD.uid}`),{
                 credits: parseInt(userD.credits) + 20
             })
         }
@@ -150,6 +151,7 @@ const Roulette = () => {
     }
   return (
     <section className='roulette-container'>
+        <NeedLogin/>
         <audio ref={winSoundRef}  src={winSound} style={{display:'none'}}></audio>
         <div className="roulette-c-bg">
         <audio style={{display: 'none'}}  ref={audioRef} src={rouletteSound}></audio>

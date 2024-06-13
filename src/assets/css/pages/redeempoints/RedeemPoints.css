@@ -1,0 +1,21 @@
+.redeem-p-container {
+    height: calc(100vh - 80px);
+    background-color: var(--blue-gray);
+    padding-top: 50px;
+}
+
+.redeem-p-body {
+    width: 100%;
+    max-width: 400px;
+    height: max-content;
+    background-color: var(--light-black);
+    border: 1px solid var(--yellow);
+    padding: 20px;
+    margin: auto;
+    color: #CE9508;
+    font-family: "Poppins",sans-serif;
+    border-radius: 5px;
+}
+.redeem-p-body  p {
+    letter-spacing: 1.5px;
+}

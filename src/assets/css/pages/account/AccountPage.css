@@ -80,7 +80,8 @@
     font-family: "Poppins",sans-serif;
     display: flex;
     gap: 10px;
-    color: var(--text-color)
+    color: var(--text-color);
+    flex-wrap: wrap;
 }
 .account-p-referral .account-pr-code span {
     opacity: .8;

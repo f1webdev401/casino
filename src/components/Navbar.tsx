@@ -32,8 +32,8 @@ const Navbar = ({user}:any) => {
     <>
   
     <nav className='app-nav'>
-        <NavLink to={user? 'games' : ''} className="nav-logo-txt">
-                <h1>SMM {parseInt(windowWidth) <= 430 && user  ? " ": <span>PLAY</span>}</h1>
+        <NavLink to={user.user? 'games' : ''} className="nav-logo-txt">
+                <h1>SMM {parseInt(windowWidth) <= 430 && user.user  ? " ": <span>PLAY</span>}</h1>
                 <i className="fa-solid fa-star"></i>
         </NavLink>
         {user.user ? 
@@ -41,13 +41,13 @@ const Navbar = ({user}:any) => {
                 <div className="nav-lucky-points npm-div">
                     <i className="fa-regular fa-face-grin-stars"></i>
                     <span className="lucky-points">
-                        {user.userD?.luckyPoints}
+                        {user.userD?.luckyPoints.toLocaleString('en-US')}
                     </span>
                 </div>
                 <div className="nav-credits npm-div">
                     <div className="nav-credits-wrapper">
                         <i className="fa-solid fa-money-bill"></i>
-                        <span>{user.userD?.credits}</span>
+                        <span>{user.userD?.credits.toLocaleString('en-US')}</span>
                     </div>
                 <button><i className="fa-solid fa-plus"></i></button>
                 </div>
@@ -115,7 +115,7 @@ const Navbar = ({user}:any) => {
 
         <div  className="menu-n-transactions menu-list-div">
             <span>Lucky Points</span>
-            <NavLink onClick={() => setMenuBarOpen(false)} to={''} className="mnt-transactions">
+            <NavLink onClick={() => setMenuBarOpen(false)} to={'/redeempoints'} className="mnt-transactions">
             <i className="fa-regular fa-face-grin-stars"></i>
                 <span>Redeem Lucky Points</span>
             </NavLink>

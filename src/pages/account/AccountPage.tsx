@@ -1,10 +1,24 @@
 import { NavLink } from 'react-router-dom'
 import '../../assets/css/pages/account/AccountPage.css'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import UserContext from '../../context/UserContext'
 
 const AccountPage = () => {
     const {userD} = useContext(UserContext)
+    const [copied,setCopied] = useState(false)
+    const copyToClipboard = () => {
+        const textToCopy = userD?.ownReferral || '';
+        navigator.clipboard.writeText(textToCopy)
+          .then(() => {
+            setCopied(true)
+            setTimeout(() => {
+                setCopied(false)
+            },1000)
+            // You can add any additional feedback for the user here
+          })
+          .catch(err => {
+          });
+      };
   return (
     <section className='account-p-container'>
         <div className="account-p-body">
@@ -24,7 +38,7 @@ const AccountPage = () => {
                     <span>Phonenumber:</span>
                     <span>{userD?.phonenumber}</span>
                 </div>
-                <button>Change Password</button>
+                {/* <button>Edit Account</button> */}
             </div>
 
 
@@ -34,14 +48,14 @@ const AccountPage = () => {
                 </div>
                 <div className="account-pr-code">
                 <span>{userD?.ownReferral}</span>
-                <button>
-                    <span>Copy Link</span>
+                <button disabled={copied}  onClick={copyToClipboard}>
+                    <span>{copied ? "Copied": "Copy Code"}</span>
                     <i className="fa-solid fa-copy"></i></button>
                 </div>
                 <p>
                     <i className="fa-solid fa-flag"></i>
                     <span>
-                    Share your referral code with a friend. When they sign up, enter the referral code during registration, and deposit 200 credits, you’ll receive 200 credits for free!
+                    Share your referral code with a friend. When they sign up, enter the referral code during registration, and deposit 200 credits, you’ll receive 50 credits for free!
                     </span>
                    </p>
             </div>
