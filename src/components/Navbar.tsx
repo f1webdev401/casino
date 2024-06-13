@@ -41,13 +41,13 @@ const Navbar = ({user}:any) => {
                 <div className="nav-lucky-points npm-div">
                     <i className="fa-regular fa-face-grin-stars"></i>
                     <span className="lucky-points">
-                        {user.userD?.luckyPoints.toLocaleString('en-US')}
+                        {user && parseInt(user.userD?.luckyPoints).toLocaleString('en-US')}
                     </span>
                 </div>
                 <div className="nav-credits npm-div">
                     <div className="nav-credits-wrapper">
                         <i className="fa-solid fa-money-bill"></i>
-                        <span>{user.userD?.credits.toLocaleString('en-US')}</span>
+                        <span>{user && parseInt(user.userD?.credits).toLocaleString('en-US')}</span>
                     </div>
                 <button><i className="fa-solid fa-plus"></i></button>
                 </div>
