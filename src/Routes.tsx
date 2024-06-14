@@ -18,6 +18,7 @@ import Games from "./pages/games/Games";
 import { SignupProvider } from "./context/SignupContext";
 import { UserContextProvider } from "./context/UserContext";
 import RedeemPoints from "./pages/redeempoints/RedeemPoints";
+import Uprizehunt from "./pages/games/uprizehunt/Uprizehunt";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: 'roulettegame',
                 element: <Roulette />
+            },
+            {
+                path: 'ultimateprizehunt',
+                element: <Uprizehunt />
             },
             {
                 path:'login',

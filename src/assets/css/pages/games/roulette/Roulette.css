@@ -453,6 +453,7 @@
     justify-content: center;
     background-color: #131521ae;
     z-index: 9999;
+    width: 100%;
 }
 .roulette-price-model .roulette_price_container {
     width: 100%;

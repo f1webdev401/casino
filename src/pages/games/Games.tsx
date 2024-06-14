@@ -25,6 +25,18 @@ const Games = () => {
                 </div>
             </div>
             
+
+            {/* <div className="smmplay-g-list-container">
+                <div className="smmplay-g-list-header">
+                    <h1>Games</h1>
+                </div>
+                <div className="smmplay-games-container">
+                    <NavLink to={'/ultimateprizehunt'} className="smmplay-game-box">
+                        Ultimate Prize Hunt
+                    </NavLink>
+                </div>
+            </div> */}
+
             <div className="games-comming-soon">
                 <span>Many More Comming Soon!</span>
             </div>
