@@ -449,12 +449,13 @@
     position: fixed;
     display: flex;
     left: 0;
-    top: 0;
+    top: 80px;
     align-items: center;
     justify-content: center;
     background-color: #131521ae;
     z-index: 9999;
     width: 100%;
+    height: calc(100vh - 80px);
 }
 .roulette-price-model .roulette_price_container {
     width: 100%;
