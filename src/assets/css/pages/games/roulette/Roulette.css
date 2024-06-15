@@ -447,8 +447,9 @@
 }
 .roulette-price-model {
     position: fixed;
-    inset: 0;
     display: flex;
+    left: 0;
+    top: 0;
     align-items: center;
     justify-content: center;
     background-color: #131521ae;
