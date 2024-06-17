@@ -4,6 +4,7 @@
     background-color: var(--blue-gray);
     background-image: linear-gradient(to right ,#4e0f27b1,var(--blue-gray));
     min-height: 100vh;
+    overflow-x: hidden;
 }
 .roulette-container .roulette-c-bg {
     border: 1px solid white;

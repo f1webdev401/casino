@@ -12,9 +12,7 @@ const Uprizehunt = () => {
     const [isPlayerPick,setIsPlayerPick] = useState<boolean>(false)
     const [isShuffle , setIsShuffle] = useState<any>(false)
     const [clickStart,setClickStart] = useState<boolean>(false)
-    const animation = [
-        "ub4 1s forwards"
-    ]
+    const [pickError,setPickError] = useState("")
     function shuffle(array:any) {
         let currentIndex = array.length;
       
@@ -34,13 +32,13 @@ const Uprizehunt = () => {
     const ShuffleCardHandler = () => {
         let newData = [...data]
         let dats = shuffle(newData)
-        console.log(dats)
         setData(dats)
-        console.log(data,'this data')
+        console.log(process.env.REACT_APP_FUNCTION)
     }
     const ChooseCardsBtn = (target:any) => {
         console.log(target)
         console.log(selectedCard)
+        setPickError("")
         if(target === 1) {
             let newData = [...data]
             let dats = shuffle(newData)
@@ -54,26 +52,43 @@ const Uprizehunt = () => {
 
     }
     const PickCard = () => {
-        setIsPlayerPick(true)
+        if(!selectedCard) {
+            setPickError("Please Pick a card")
+        }else {
+            setPickError("")
+            // setIsPlayerPick(true)    
+            setClickStart(true)
+        }
     }
+    const ConfirmPickCard = () => {
+        setIsPlayerPick(true) 
+        setClickStart(false)
+    }
+    
   return (
     <section className="uprizehunt-container">
-
         <div className="uprize-h-header">
             <h1>500k Jackpot Prize</h1>
         </div>
-
+        {pickError && 
+        <div className="uprize-h-pick-e">
+            <i className="fa-solid fa-flag"></i>
+                <span>{pickError}</span>
+            </div>
+        }
         <div className="uprize-h-game">
-            
+           
             {data && data.map((key:number,index:number) => (
                 <div style={{
-                    border: selectedCard === index ? "2px solid red": "",
-                    animation: selectedCard === index &&isPlayerPick ? 
+                    background: key == 1 ? "radial-gradient(circle, rgba(18,213,18,1) 49%, rgba(47,83,24,1) 100%)" :"",
+                    opacity: key !== 1 && selectedCard !== index ? ".8" : "1",
+                    border: selectedCard === index ? "5px solid var(--green)": "",
+                    animation: isPlayerPick ? 
                     "open .1s forwards .3s" : "",
                 }} onClick={() =>{ ChooseCardsBtn(key)
                     
                 }} className="uprize-box" key={index}>
-                    <span>{key}</span>
+                    <span>{key === 1 ? "🏆": "💣"}</span>
                 </div>
             ))}
             {data.map((key:any,index:any) => (
@@ -84,19 +99,40 @@ const Uprizehunt = () => {
                     }}
                     key={index}
                     style={{
-                        border: selectedCard  === index ? "2px solid red": "",
-                        animation: selectedCard  === index && isPlayerPick ? "pick .3s forwards " : "",
+                        border: selectedCard  === index ? "5px solid var(--green)": "",
+                        animation: selectedCard  === index && isPlayerPick ? "pick .3s forwards " :  isPlayerPick ? "openall .3s forwards ":"",
                     }}
                 className="cover">
                     <span>⭐SMM⭐</span>
                 </div>
             ))}
+            
+            <div className="uprize-result">
+                <div className="uprize-res-box">
+                <div className="uprize-res-text">
+                    <span>Opps Soryy Try Again!</span>
+                </div>
+                <div className="uprize-res-action">
+                    <button>Ok</button>
+                </div>
+                </div>
+            </div>
         </div>
         <div className="uprize-action-btn">
-            <button onClick={() => {
+            {/* <button onClick={() => {
                 setIsShuffle(true)
-               }}>Start</button>
+               }}>Start</button> */}
+               {isPlayerPick ? 
+            <button
+                onClick={() => {
+                    setClickStart(false)
+                    setIsPlayerPick(false)
+                    setSelectedCard("")
+                    ShuffleCardHandler()
+                }}
+            >Restart</button> : 
                <button onClick={PickCard}>Pick</button>
+            }
         </div>
         
         {clickStart && 
@@ -107,7 +143,7 @@ const Uprizehunt = () => {
                     <p>For Credits 20.00</p>
                 </div>
                 <div className="uprize-ss-action">
-                <button>Yes</button>
+                <button onClick={ConfirmPickCard}>Yes</button>
                 <button onClick={() => setClickStart(false)}>No</button>
                 </div>
             </div>
