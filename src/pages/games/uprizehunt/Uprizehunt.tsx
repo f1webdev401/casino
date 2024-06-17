@@ -8,6 +8,9 @@ const Uprizehunt = () => {
         0,0,0,0,0,
         0,0,0,0,0,
     ])
+    const [selectedCard,setSelectedCard] = useState<any>("")
+    const [isPlayerPick,setIsPlayerPick] = useState<boolean>(false)
+    const [isShuffle , setIsShuffle] = useState<any>(false)
     const [clickStart,setClickStart] = useState<boolean>(false)
     const animation = [
         "ub4 1s forwards"
@@ -37,6 +40,7 @@ const Uprizehunt = () => {
     }
     const ChooseCardsBtn = (target:any) => {
         console.log(target)
+        console.log(selectedCard)
         if(target === 1) {
             let newData = [...data]
             let dats = shuffle(newData)
@@ -45,6 +49,12 @@ const Uprizehunt = () => {
         }
         else {
         }
+    }
+    function targetCard(target:any,index:any) {
+
+    }
+    const PickCard = () => {
+        setIsPlayerPick(true)
     }
   return (
     <section className="uprizehunt-container">
@@ -56,18 +66,37 @@ const Uprizehunt = () => {
         <div className="uprize-h-game">
             
             {data && data.map((key:number,index:number) => (
-                <div onClick={() => ChooseCardsBtn(key)} className="uprize-box" key={index}>
+                <div style={{
+                    border: selectedCard === index ? "2px solid red": "",
+                    animation: selectedCard === index &&isPlayerPick ? 
+                    "open .1s forwards .3s" : "",
+                }} onClick={() =>{ ChooseCardsBtn(key)
+                    
+                }} className="uprize-box" key={index}>
                     <span>{key}</span>
                 </div>
             ))}
             {data.map((key:any,index:any) => (
-                <div className="cover">
-                    
+                <div
+                    onClick={() => {
+                        setSelectedCard(index)
+                        ChooseCardsBtn(key)
+                    }}
+                    key={index}
+                    style={{
+                        border: selectedCard  === index ? "2px solid red": "",
+                        animation: selectedCard  === index && isPlayerPick ? "pick .3s forwards " : "",
+                    }}
+                className="cover">
+                    <span>⭐SMM⭐</span>
                 </div>
             ))}
         </div>
         <div className="uprize-action-btn">
-            <button onClick={() => setClickStart(true)}>Start</button>
+            <button onClick={() => {
+                setIsShuffle(true)
+               }}>Start</button>
+               <button onClick={PickCard}>Pick</button>
         </div>
         
         {clickStart && 

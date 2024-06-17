@@ -5,7 +5,14 @@
     flex-direction: column;
     align-items: center;
 }
-
+.uprize-h-header {
+  border: 1px solid white;
+  margin: 20px 0;
+  padding: 5px 10px;
+  font-family: "Poppins",sans-serif;
+  letter-spacing: 1.5px;
+  border-radius: 5px;
+}
 .uprize-h-game {
     position: relative;
     width: 100%;
@@ -25,20 +32,50 @@
     grid-row-gap: 10px;
     place-content: center;
 }
-/* .uprize-h-game .cover {
-    z-index: 20;
-    height: 0px;
-    width: 0px;
-    border: 1px solid red;
-     animation: cover 1s  forwards;
-     background-image: linear-gradient(to right , yellow,green); 
-    width: 60px;
-    height: 60px;
-    border-radius: 5px;
+.uprize-h-game .cover {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins",sans-serif;
+  cursor: pointer;
+  user-select: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  position: absolute;
+  border: 1px solid white;
+  background: rgb(30,35,46);
+background: radial-gradient(circle, rgba(30,35,46,1) 46%, rgba(24,49,83,1) 100%);
+  transform: scale(1);
+}
+@keyframes pick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.7);
+  }
+  100% {
+    display: none;
+    transform: scale(.9);
+  }
 } 
-*/
+.uprize-h-game .cover span {
+  display: flex;
+  transform: rotate(-45deg);
+  font-family: "Poppins",sans-serif;
+  font-size: 12px;
+}
+.uprize-h-game .cover:hover {
+  transition: all .3s;
+  transform: scale(1.05);
+}
+.uprize-h-game .cover:hover:active {
+  transform: scale(1);
+  transition: all .3s;
 
-
+}
 /* @keyframes cover {
     from{
         height: 0px;
@@ -62,13 +99,24 @@
     height: 60px;
     border-radius: 5px;
     position: absolute;
+    transform: scale(.7);
 }
+
+@keyframes open {
+    from { transform: scale(.9);}
+    to { transform: scale(1);}
+}
+
 .uprize-h-game .uprize-box:nth-child(1) {
     left: 16px;
     top: 16.5px;
-    /* animation: ub1 1s forwards; */
-
+   
 }
+.uprize-h-game .cover:nth-child(26) {
+  left: 16px;
+  top: 16.5px;
+}
+
 @keyframes ub1 {
   from {
     left: 16px;
@@ -83,6 +131,11 @@
     left: 91.9px;
     /* animation: ub2 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(27) {
+  top: 16.5px;
+  left: 91.9px;
+}
+
 @keyframes ub2 {
     from {
       top: 16.5px;
@@ -96,6 +149,10 @@
     top: 16.5px;
     left: 167px;
     /* animation: ub3 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(28) {
+  top: 16.5px;
+  left: 167px;
 }
 @keyframes ub3 {
     from {
@@ -111,6 +168,10 @@
     left: 242px;
     /* animation: ub4 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(29) {
+  top: 16.5px;
+  left: 242px;
+}
 @keyframes ub4 {
     from {
       top: 16.5px;
@@ -124,6 +185,10 @@
     top: 16.5px;
     left: 316px;
     /* animation: ub5 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(30) {
+  top: 16.5px;
+    left: 316px;
 }
 @keyframes ub5 {
     from {
@@ -139,6 +204,10 @@
     top: 92px;
     /* animation: ub6 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(31) {
+  left: 16px;
+    top: 92px;
+}
 @keyframes ub6 {
     from {
       left: 16px;
@@ -152,6 +221,10 @@
   top: 92px;
   left: 91.9px;
     /* animation: ub7 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(32) {
+  top: 92px;
+  left: 91.9px;
 }
 @keyframes ub7 {
     from {
@@ -167,6 +240,10 @@
     left: 167px;
     /* animation: ub8 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(33) {
+  top: 92px;
+  left: 167px;
+}
 @keyframes ub8 {
     from {
       top: 92px;
@@ -180,6 +257,10 @@
   top: 92px;
     left: 242px;
     /* animation: ub9 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(34) {
+  top: 92px;
+    left: 242px;
 }
 @keyframes ub9 {
     from {
@@ -195,6 +276,10 @@
     left: 316px;
     /* animation: ub10 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(35) {
+  top: 92px;
+  left: 316px;
+}
 @keyframes ub10 {
     from {
       top: 92px;
@@ -208,6 +293,10 @@
     left: 16px;
     top: 166.5px;
     /* animation: ub11 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(36) {
+  left: 16px;
+  top: 166.5px;
 }
 @keyframes ub11 {
     from {
@@ -223,6 +312,10 @@
     left: 91.9px;
     /* animation: ub12 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(37) {
+  top: 166.5px;
+    left: 91.9px;
+}
 @keyframes ub12 {
     from {
       top: 166.5px;
@@ -236,10 +329,18 @@
   top: 166.5px;
     left: 167px;
 }
+.uprize-h-game .cover:nth-child(38) {
+  top: 166.5px;
+    left: 167px;
+}
 .uprize-h-game .uprize-box:nth-child(14) {
   top: 166.5px;
     left: 242px;
     /* animation: ub14 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(39) {
+  top: 166.5px;
+    left: 242px;
 }
 @keyframes ub14 {
     from {
@@ -255,6 +356,10 @@
     left: 316px;
     /* animation: ub15 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(40) {
+  top: 166.5px;
+  left: 316px;
+}
 @keyframes ub15 {
     from {
       top: 166.5px;
@@ -268,6 +373,10 @@
     left: 16px;
     top: 242px;
     /* animation: ub16 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(41) {
+  left: 16px;
+    top: 242px;
 }
 @keyframes ub16 {
     from {
@@ -284,6 +393,10 @@
     left: 91.9px;
     /* animation: ub17 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(42) {
+  top: 242px;
+  left: 91.9px;
+}
 @keyframes ub17 {
     from {
       top: 242px;
@@ -297,6 +410,10 @@
   top: 242px;
     left: 167px;
     /* animation: ub18 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(43) {
+  top: 242px;
+    left: 167px;
 }
 @keyframes ub18 {
     from {
@@ -312,6 +429,10 @@
     left: 242px;
     /* animation: ub19 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(44) {
+  top: 242px;
+  left: 242px;
+}
 @keyframes ub19 {
     from {
       top: 242px;
@@ -325,6 +446,10 @@
     top: 242px;  
     left: 316px;
     /* animation: ub20 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(45) {
+  top: 242px;  
+  left: 316px;
 }
 @keyframes ub20 {
     from {
@@ -340,6 +465,10 @@
     top: 316px;
     /* animation: ub21 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(46) {
+  left: 16px;
+  top: 316px;
+}
 @keyframes ub21 {
     from {
       left: 16px;
@@ -353,6 +482,10 @@
     top: 316px;
     left: 91.9px;
     /* animation: ub22 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(47) {
+  top: 316px;
+  left: 91.9px;
 }
 @keyframes ub22 {
     from {
@@ -368,6 +501,10 @@
     left: 167px;
     /* animation: ub23 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(48) {
+  top: 316px;
+    left: 167px;
+}
 @keyframes ub23 {
     from {
       top: 316px;
@@ -382,6 +519,10 @@
     left: 242px;
     /* animation: ub24 1s forwards; */
 }
+.uprize-h-game .cover:nth-child(49) {
+  top: 316px;
+  left: 242px;
+}
 @keyframes ub24 {
     from {
       top: 316px;
@@ -395,6 +536,10 @@
   top: 316px; 
     left: 316px;
     /* animation: ub25 1s forwards; */
+}
+.uprize-h-game .cover:nth-child(50) {
+  top: 316px; 
+    left: 316px;
 }
 @keyframes ub25 {
     from {
