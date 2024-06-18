@@ -3,11 +3,12 @@ import { NavLink } from 'react-router-dom'
 import RouleteImg from '../../assets/images/roulette-game.png'
 import UhuntImg from '../../assets/images/u-hunt.png'
 import NeedLogin from '../../components/NeedLogin'
-
+import WelcomeMsg from './WelcomeMsg'
 const Games = () => {
   return (
     <section className='games-container'>
         <NeedLogin />
+        <WelcomeMsg/>
         <div className="games-p-wrapper">
             <h1>Grand Opening Event <span>Ends in July 15</span></h1>
             <div className="games-p-event">

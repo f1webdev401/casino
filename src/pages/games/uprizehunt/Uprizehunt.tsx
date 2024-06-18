@@ -83,9 +83,9 @@ const Uprizehunt = () => {
         setTimeout(() => {
             setResultDone(true)
         },2000)
-        setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) - 1}))
-        await update(ref(db,`users/${userD.uid}`),{
-            credits: parseInt(userD.credits) - 20
+        setUserD((prev:any) => ({...prev,credits:parseInt(userD?.credits) - 1}))
+        await update(ref(db,`users/${userD?.uid}`),{
+            credits: parseInt(userD?.credits) - 20
         })
     }
   
@@ -185,8 +185,8 @@ const Uprizehunt = () => {
             >Restart</button> : 
                <button
                className='uab-openbox-btn'
-               disabled={parseInt(userD.credits) < 20 ? true : false}
-               onClick={OpenBoxHandler}>{parseInt(userD.credits) < 20 ? "Not enough credits": "Open Box"}</button>
+               disabled={parseInt(userD?.credits) < 20 ? true : false}
+               onClick={OpenBoxHandler}>{parseInt(userD?.credits) < 20 ? "Not enough credits": "Open Box"}</button>
             }
         </div>
         

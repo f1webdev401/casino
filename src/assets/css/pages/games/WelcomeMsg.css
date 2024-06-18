@@ -1,0 +1,82 @@
+.welcome-msg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 9999;
+    display: flex;
+    height: 100vh;
+    background-color: #15191fab;
+    padding: 5px;
+}
+
+
+.welcome-msg-content {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #15191F;
+    border: 1px solid white;
+    margin:  auto;
+    height: calc(100% - (50px));
+    border-radius: 5px;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+
+.welcome-msg-content .welcome-msg-header h1 {
+    font-family: "Poppins",sans-serif;
+    font-size: 25px;
+    color: var(--yellow);
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid white;
+    opacity: .9;
+}
+
+.welcome-body-content {
+    margin-top: 30px;
+}
+.welcome-body-content .wbc-text {
+    font-family: "Poppins",sans-serif;
+    margin-top: 20px;
+}
+.welcome-body-content .wbc-text h2 {
+    letter-spacing: 1.5px;
+}
+.welcome-body-content .wbc-text p {
+    color: rgba(255, 255, 255, 0.769);
+    margin-top: 20px;
+}
+
+.welcome-body-content .wbc-note p {
+    color: yellow;
+    font-family: "Poppins",sans-serif;
+    margin-top: 20px;
+}
+.welcome-msg-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.welcome-msg-btn button {
+    padding: 5px 30px;
+    font-family: "Poppins",sans-serif;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--red);
+    color: white;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s;
+}
+.welcome-msg-btn button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.welcome-msg-btn button:active {
+    transform: scale(1);
+    opacity: 1;
+}

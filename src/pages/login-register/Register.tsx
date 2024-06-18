@@ -69,6 +69,7 @@ const Register = () => {
                 referralCode:userDetail.referralCode,
                 credits:0,
                 luckyPoints:0,
+                isFirstLogin:true,
                 ownReferral:user.user.uid,
                 email:userDetail.email,
                 cashins:["null"],
