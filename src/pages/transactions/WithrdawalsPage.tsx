@@ -16,7 +16,7 @@ const WithrdawalsPage = () => {
       <div className="withdrawals-p-data">
       
       {userD !== null && userD !== "loading" && userD?.withdrawals[0] !== "null" ? 
-      userD.withdrawals.map((detail:any,index:number) => (
+      [...userD?.withdrawals].reverse().map((detail:any,index:number) => (
         <div className="withdrawals-p-details" key={index}>
           <div className="withdrawals-p-stats" style={{backgroundColor:detail.status === "pending" ? "var(--yellow)" : "var(--green)"}}>
             {

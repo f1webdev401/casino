@@ -626,6 +626,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding-bottom: 150px;
     }
     .roulette-box .box-data span {
         font-size: 9px;

@@ -117,27 +117,39 @@ const Roulette = () => {
             }
         },100)
         
-        setTimeout(() => {
+        setTimeout(async () => {
             setPrice(data[spinList])
             audioRef.current.pause()
             audioRef.current.currentTime = 0
             winSoundRef.current.play()
             rouletteBox.current.style.animation = ''
+            if(data[spinList].price === "100 Lucky Points") {
+                setUserD((prev:any) => ({...prev,luckyPoints:parseInt(userD.luckyPoints) + 100}))
+                await update(ref(db,`users/${userD.uid}`),{
+                    luckyPoints: parseInt(userD.luckyPoints) + 100
+                })
+            }
+            if(data[spinList].price === "20 PHP") {
+                setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) + 20}))
+                await update(ref(db,`users/${userD.uid}`),{
+                    credits: parseInt(userD.credits) + 20
+                })
+            }
         },14500)
     }
     const OkButtonHandler = async () => {
-        if(price.price === "100 Lucky Points") {
-            setUserD((prev:any) => ({...prev,luckyPoints:parseInt(userD.luckyPoints) + 100}))
-            await update(ref(db,`users/${userD.uid}`),{
-                luckyPoints: parseInt(userD.luckyPoints) + 100
-            })
-        }
-        if(price.price === "20 PHP") {
-            setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) + 20}))
-            await update(ref(db,`users/${userD.uid}`),{
-                credits: parseInt(userD.credits) + 20
-            })
-        }
+        // if(price.price === "100 Lucky Points") {
+        //     setUserD((prev:any) => ({...prev,luckyPoints:parseInt(userD.luckyPoints) + 100}))
+        //     await update(ref(db,`users/${userD.uid}`),{
+        //         luckyPoints: parseInt(userD.luckyPoints) + 100
+        //     })
+        // }
+        // if(price.price === "20 PHP") {
+        //     setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) + 20}))
+        //     await update(ref(db,`users/${userD.uid}`),{
+        //         credits: parseInt(userD.credits) + 20
+        //     })
+        // }
         setPrice(null)
         setBtnDisabled(false)
     }

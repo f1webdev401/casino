@@ -22,7 +22,8 @@ const Uprizehunt = () => {
     const [openBoxErr,setOpenBoxErr] = useState("")
     const [isConfirmSelect,setIsConfirmSelect] = useState<any>(false)
     const [targetPrize,setTargetPrize] = useState<any>("")
-
+    const [resultDone,setResultDone] = useState<any>(false)
+    const [resetBtn,setResetBtn] = useState<any>(true)
     const ResSound = useRef<any>()
     function shuffle(array:any) {
         let currentIndex = array.length;
@@ -67,7 +68,7 @@ const Uprizehunt = () => {
         }
     }
     const ConfirmSelectBoxBtn = async () => {
-       
+        
         if(parseInt(userD.credits) < 20) {
             return;
         }
@@ -79,13 +80,13 @@ const Uprizehunt = () => {
         setTimeout(() => {
             ResSound.current.play()
         },200)
+        setTimeout(() => {
+            setResultDone(true)
+        },2000)
         setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) - 1}))
         await update(ref(db,`users/${userD.uid}`),{
             credits: parseInt(userD.credits) - 20
         })
-       
-        
-        
     }
   
     const SelectCardBtn = (target:any,targetVal:any) => {
@@ -101,6 +102,7 @@ const Uprizehunt = () => {
         ShuffleCardHandler()
         setOpenBox(false)
         setIsConfirmSelect(false)
+        setResetBtn(true)
     }
     const CancelSelectBox = () => {
         setSelectedCard("")
@@ -149,23 +151,35 @@ const Uprizehunt = () => {
                 </div>
             ))}
             
-            <div className="uprize-result">
+            
+        </div>
+
+        {resultDone && 
+        
+        <div className="uprize-result-container">
+        <div className="uprize-result">
                 <div className="uprize-res-box">
                 <div className="uprize-res-text">
-                    <span>Opps Soryy Try Again!</span>
+                    <span>Opps Sorry Try Again!</span>
                 </div>
                 <div className="uprize-res-action">
-                    <button>Ok</button>
+                    <button onClick={() => {
+                        setResetBtn(false)
+                        setResultDone(false)}}>Ok</button>
                 </div>
                 </div>
             </div>
         </div>
+        }
+       
         <div className="uprize-action-btn">
             {/* <button onClick={() => {
                 setIsShuffle(true)
                }}>Start</button> */}
                {isConfirmSelect ? 
             <button
+            style={{opacity: !resetBtn ? "1": ".5",pointerEvents: !resetBtn? "auto": "none"}}
+            disabled={resetBtn}
             className='uab-restart-btn'
                 onClick={() => ResetBtnHandler()}
             >Restart</button> : 
