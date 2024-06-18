@@ -43,7 +43,8 @@ const LandingPage = () => {
                     </div>
                     <div className="lp-i-cp-text lpip-txt">
                         <span>Contact Us For Cashin</span>
-                        <span>FB Link</span>
+                        <br />
+                        <a style={{fontFamily:"Poppins"}} href='https://www.facebook.com/profile.php?id=61561124611644'>Facebook</a>
                     </div>
             </div>
             <div className="lp-i-play-wind-jackpot lpip-box">
