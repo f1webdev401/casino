@@ -1,6 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../../../assets/css/pages/games/uprizehunt/Uprizehunt.css'
+import ResultSound from '../../../assets/audio/uprizesound.mp3'
+
+import UserContext from '../../../context/UserContext';
+import { useContext } from 'react';
+import { db } from '../../../firebase-config';
+import { update,ref } from 'firebase/database';
+import NeedLogin from '../../../components/NeedLogin';
 const Uprizehunt = () => {
+    const {userD,setUserD} = useContext(UserContext)
     const [data,setData] = useState<any>([
         0,0,0,0,0,
         0,0,0,0,0,
@@ -9,10 +17,13 @@ const Uprizehunt = () => {
         0,0,0,0,0,
     ])
     const [selectedCard,setSelectedCard] = useState<any>("")
-    const [isPlayerPick,setIsPlayerPick] = useState<boolean>(false)
-    const [isShuffle , setIsShuffle] = useState<any>(false)
-    const [clickStart,setClickStart] = useState<boolean>(false)
-    const [pickError,setPickError] = useState("")
+
+    const [openBox,setOpenBox] = useState<any>(false)
+    const [openBoxErr,setOpenBoxErr] = useState("")
+    const [isConfirmSelect,setIsConfirmSelect] = useState<any>(false)
+    const [targetPrize,setTargetPrize] = useState<any>("")
+
+    const ResSound = useRef<any>()
     function shuffle(array:any) {
         let currentIndex = array.length;
       
@@ -38,7 +49,6 @@ const Uprizehunt = () => {
     const ChooseCardsBtn = (target:any) => {
         console.log(target)
         console.log(selectedCard)
-        setPickError("")
         if(target === 1) {
             let newData = [...data]
             let dats = shuffle(newData)
@@ -48,59 +58,91 @@ const Uprizehunt = () => {
         else {
         }
     }
-    function targetCard(target:any,index:any) {
-
-    }
-    const PickCard = () => {
+   
+    const OpenBoxHandler = () => {
         if(!selectedCard) {
-            setPickError("Please Pick a card")
+            setOpenBoxErr("Please Select a Box")
         }else {
-            setPickError("")
-            // setIsPlayerPick(true)    
-            setClickStart(true)
+            setOpenBox(true)
         }
     }
-    const ConfirmPickCard = () => {
-        setIsPlayerPick(true) 
-        setClickStart(false)
+    const ConfirmSelectBoxBtn = async () => {
+       
+        if(parseInt(userD.credits) < 20) {
+            return;
+        }
+        if(parseInt(targetPrize) === 1) {
+            ShuffleCardHandler()
+        }
+        setIsConfirmSelect(true)
+        setOpenBox(false)
+        setTimeout(() => {
+            ResSound.current.play()
+        },200)
+        setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) - 1}))
+        await update(ref(db,`users/${userD.uid}`),{
+            credits: parseInt(userD.credits) - 20
+        })
+       
+        
+        
     }
-    
+  
+    const SelectCardBtn = (target:any,targetVal:any) => {
+        setSelectedCard(target)
+        setTargetPrize(targetVal)
+        setOpenBoxErr("")
+        if(targetVal === 1) {
+            ShuffleCardHandler()
+        }
+    }
+    const ResetBtnHandler = () => {
+        setSelectedCard("")
+        ShuffleCardHandler()
+        setOpenBox(false)
+        setIsConfirmSelect(false)
+    }
+    const CancelSelectBox = () => {
+        setSelectedCard("")
+        setOpenBox(false)
+    }
+    useEffect(() => {
+        ShuffleCardHandler()
+    },[])
   return (
     <section className="uprizehunt-container">
+        <NeedLogin/>
+        <audio src={ResultSound} ref={ResSound} style={{display:'none'}}></audio>
         <div className="uprize-h-header">
-            <h1>500k Jackpot Prize</h1>
+            <h1>500k Jackpot Prize ✨</h1>
         </div>
-        {pickError && 
+        {openBoxErr && 
         <div className="uprize-h-pick-e">
             <i className="fa-solid fa-flag"></i>
-                <span>{pickError}</span>
+                <span>{openBoxErr}</span>
             </div>
         }
-        <div className="uprize-h-game">
-           
+        <div className="uprize-h-game"
+            style={{pointerEvents: isConfirmSelect ? "none": "auto"}}
+        >
             {data && data.map((key:number,index:number) => (
                 <div style={{
-                    background: key == 1 ? "radial-gradient(circle, rgba(18,213,18,1) 49%, rgba(47,83,24,1) 100%)" :"",
-                    opacity: key !== 1 && selectedCard !== index ? ".8" : "1",
+                    background: isConfirmSelect &&  key == 1 ? "radial-gradient(circle, rgba(18,213,18,1) 49%, rgba(47,83,24,1) 100%)" :"",
+                    opacity: isConfirmSelect && key !== 1 && selectedCard !== index ? ".8" : "1",
                     border: selectedCard === index ? "5px solid var(--green)": "",
-                    animation: isPlayerPick ? 
+                    animation: isConfirmSelect ? 
                     "open .1s forwards .3s" : "",
-                }} onClick={() =>{ ChooseCardsBtn(key)
-                    
-                }} className="uprize-box" key={index}>
-                    <span>{key === 1 ? "🏆": "💣"}</span>
+                }}  className="uprize-box" key={index}>
+                    {isConfirmSelect ? <span>{ key === 1 ? "🏆": "💣"}</span> : ""}
                 </div>
             ))}
-            {data.map((key:any,index:any) => (
+            {data.map((data:any,index:any) => (
                 <div
-                    onClick={() => {
-                        setSelectedCard(index)
-                        ChooseCardsBtn(key)
-                    }}
+                    onClick={() => SelectCardBtn(index,data)}
                     key={index}
                     style={{
                         border: selectedCard  === index ? "5px solid var(--green)": "",
-                        animation: selectedCard  === index && isPlayerPick ? "pick .3s forwards " :  isPlayerPick ? "openall .3s forwards ":"",
+                        animation: selectedCard  === index && isConfirmSelect ? "pick .3s forwards " :  isConfirmSelect ? "openall .3s forwards ":"",
                     }}
                 className="cover">
                     <span>⭐SMM⭐</span>
@@ -122,29 +164,28 @@ const Uprizehunt = () => {
             {/* <button onClick={() => {
                 setIsShuffle(true)
                }}>Start</button> */}
-               {isPlayerPick ? 
+               {isConfirmSelect ? 
             <button
-                onClick={() => {
-                    setClickStart(false)
-                    setIsPlayerPick(false)
-                    setSelectedCard("")
-                    ShuffleCardHandler()
-                }}
+            className='uab-restart-btn'
+                onClick={() => ResetBtnHandler()}
             >Restart</button> : 
-               <button onClick={PickCard}>Pick</button>
+               <button
+               className='uab-openbox-btn'
+               disabled={parseInt(userD.credits) < 20 ? true : false}
+               onClick={OpenBoxHandler}>{parseInt(userD.credits) < 20 ? "Not enough credits": "Open Box"}</button>
             }
         </div>
         
-        {clickStart && 
+        {openBox && 
         <div className="uprize-ss-container">
             <div className="uprize-ss-box">
                 <div className="uprize-ss-header">
-                    <p>Are you sure you want to start</p>
-                    <p>For Credits 20.00</p>
+                    <p>Are you sure you want to open</p>
+                    <p>For Credits <span>20.00</span></p>
                 </div>
                 <div className="uprize-ss-action">
-                <button onClick={ConfirmPickCard}>Yes</button>
-                <button onClick={() => setClickStart(false)}>No</button>
+                <button className='ussa-yes-btn' onClick={ConfirmSelectBoxBtn}>Yes</button>
+                <button className='ussa-no-btn' onClick={CancelSelectBox}>No</button>
                 </div>
             </div>
         </div>
