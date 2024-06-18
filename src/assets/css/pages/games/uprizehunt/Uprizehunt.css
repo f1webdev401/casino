@@ -740,6 +740,26 @@ background: radial-gradient(circle, rgba(30,35,46,1) 46%, rgba(24,49,83,1) 100%)
   color: rgba(255, 255, 255, 0.775);
 }
 @media only screen and (max-width: 405px) {
+  .uprizehunt-container {
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  .uprize-h-header {
+    border: 1px solid white;
+    margin:  0 ;
+    padding: 5px 10px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    opacity: .8;
+  }
+  .uprize-h-header h1 {
+    font-size: 20px;
+  }
   .uprize-h-game {
     padding: 0;
     min-width: 350px;

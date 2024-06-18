@@ -1,6 +1,7 @@
 import '../../assets/css/pages/games/Games.css'
 import { NavLink } from 'react-router-dom'
 import RouleteImg from '../../assets/images/roulette-game.png'
+import UhuntImg from '../../assets/images/u-hunt.png'
 import NeedLogin from '../../components/NeedLogin'
 
 const Games = () => {
@@ -15,11 +16,19 @@ const Games = () => {
                 </div>
                 <div className="games-event-list">
                 <NavLink to={'/roulettegame'}>
-                    <span>500k Jackpot Price</span>
+                    <span>10k Jackpot Price</span>
                     <div className="game-e-image">
                         <img src={RouleteImg} alt="" />
                     </div>
                     <span>Roulette Game</span>
+                    <p>Play Now</p>
+                </NavLink>
+                <NavLink to={'/ultimateprizehunt'}>
+                    <span>500k Jackpot Price</span>
+                    <div className="game-e-image">
+                        <img src={UhuntImg} alt="" />
+                    </div>
+                    <span>Ultimate Prize Hunt </span>
                     <p>Play Now</p>
                 </NavLink>
                 </div>
