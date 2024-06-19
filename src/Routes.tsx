@@ -19,6 +19,7 @@ import { SignupProvider } from "./context/SignupContext";
 import { UserContextProvider } from "./context/UserContext";
 import RedeemPoints from "./pages/redeempoints/RedeemPoints";
 import Uprizehunt from "./pages/games/uprizehunt/Uprizehunt";
+import RaffleDraw from "./pages/games/raffledraw/RaffleDraw";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: 'ultimateprizehunt',
                 element: <Uprizehunt />
+            },
+            {
+                path: 'raffledraw',
+                element: <RaffleDraw/>
             },
             {
                 path:'login',
@@ -91,7 +96,7 @@ const router = createBrowserRouter([
     
     ,
     {
-        path:'/smmadminpage',
+        path:'/smmadminpage',   
         element: <AdminHomePage/>,
         children : [
             {

@@ -74,6 +74,7 @@ const Register = () => {
                 email:userDetail.email,
                 cashins:["null"],
                 withdrawals:["null"],
+                raffle:["null"]
             })  
             await signOut(auth)
             setSignupMessage("Succesfully Register You can now Login")
