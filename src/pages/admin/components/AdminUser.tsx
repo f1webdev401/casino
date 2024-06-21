@@ -73,6 +73,9 @@ const AdminUser = () => {
     const usersRef = ref(db,'users')
     onValue(usersRef,(snapshot) => {
       const data = snapshot.val()
+      if(!data) {
+          setUsers(null)
+      }
       let dataKeys :any = Object.keys(data)
       // for(let i = 0; i < dataKeys.length ; i ++) {
       //   console.log(data.dataKeys[i])

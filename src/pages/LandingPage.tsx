@@ -11,7 +11,7 @@ const LandingPage = () => {
                 <div className="lp-headline-main-text">
                     <h1>Play now</h1>
                     <h1>for a chance to win a massive</h1>
-                    <h1><span className='lp-main-text-price'>500k jackpot price</span> in our </h1>
+                    <h1><span className='lp-main-text-price'>500k jackpot prize</span> in our </h1>
                     <h1>grand opening event!</h1>
                 </div>
                 <p>Win Big Jackpot Today.</p>
@@ -52,7 +52,7 @@ const LandingPage = () => {
                 <i className="fa-solid fa-dice"></i>
                 </div>
                 <div className="lp-pwj-text lpip-txt">
-                    <span>Play & Win the jackpot Price</span>
+                    <span>Play & Win the jackpot Prize</span>
                 </div>
             </div>
         </div>

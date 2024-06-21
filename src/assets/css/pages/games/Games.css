@@ -1,5 +1,6 @@
 .games-container {
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
+    height: max-content;
     background-color: var(--blue-gray);
     overflow-x: hidden;
 }
@@ -48,6 +49,18 @@
     background-color: var(--blue-gray);
     color: rgba(255, 255, 255, 0.811);
     text-decoration: none;
+    transition: all .3s;
+    transform: scale(1);
+    opacity: 1;
+    cursor: pointer;
+}
+.games-p-event .games-event-list a:hover {
+    transform: scale(1.05);
+    opacity: .7;
+}
+.games-p-event .games-event-list a:active {
+    transform: scale(1);
+    opacity: 1;
 }
 .games-p-event .games-event-list a span , p {
     letter-spacing: 1.5px;

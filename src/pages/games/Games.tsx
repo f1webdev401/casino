@@ -4,6 +4,7 @@ import RouleteImg from '../../assets/images/roulette-game.png'
 import UhuntImg from '../../assets/images/u-hunt.png'
 import NeedLogin from '../../components/NeedLogin'
 import WelcomeMsg from './WelcomeMsg'
+import RaffleImg from '../../assets/images/raffle-img.png'
 const Games = () => {
   return (
     <section className='games-container'>
@@ -17,7 +18,7 @@ const Games = () => {
                 </div>
                 <div className="games-event-list">
                 <NavLink to={'/roulettegame'}>
-                    <span>10k Jackpot Price</span>
+                    <span>10k Jackpot Prize</span>
                     <div className="game-e-image">
                         <img src={RouleteImg} alt="" />
                     </div>
@@ -25,7 +26,7 @@ const Games = () => {
                     <p>Play Now</p>
                 </NavLink>
                 <NavLink to={'/ultimateprizehunt'}>
-                    <span>500k Jackpot Price</span>
+                    <span>500k Jackpot Prize</span>
                     <div className="game-e-image">
                         <img src={UhuntImg} alt="" />
                     </div>
@@ -34,7 +35,21 @@ const Games = () => {
                 </NavLink>
                 </div>
             </div>
-            
+            <div className="games-p-event">
+                <div className="games-pe-header">
+                <span>Raffle</span>
+                </div>
+                <div className="games-event-list">
+                <NavLink to={'/raffledraw'}>
+                    <span>1 Million Prize</span>
+                    <div className="game-e-image">
+                        <img src={RaffleImg} alt="" />
+                    </div>
+                    <span>Raffle Draw</span>
+                    <p>Play Now</p>
+                </NavLink>
+                </div>
+            </div>
 
             {/* <div className="smmplay-g-list-container">
                 <div className="smmplay-g-list-header">

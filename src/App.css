@@ -7,6 +7,7 @@
   --green:#02743A;
   --blue-gray: #1E232E;
   --text-color: #ffffffec;
+  --blue: rgb(12, 12, 150);
 }
 * {
   padding: 0;

@@ -2,8 +2,24 @@
     height: max-content;
     min-height: calc(100vh - 80px);
     background-color: var(--blue-gray);
+    padding: 10px;
+    padding-bottom: 50px;
 }
-
+.raffle-draw-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.raffle-draw-header .raffle-draw-h-wrapper {
+    border: 1px solid var(--yellow);
+    width: max-content;
+    padding: 5px 20px;
+    font-family: "Poppins",sans-serif;
+    background-image: linear-gradient(to right ,#A524A9,#5C0E63);
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
 /* loader */
 .raffle-draw-loader-container {
     position: fixed;
@@ -18,6 +34,23 @@
     background-color: #15191fa3;
 }
 /* loader */
+
+/* raffle-draw-num-left */
+.raffle-draw-num-left {
+    width: 100%;
+    max-width: 1200px;
+    margin: 5px auto;
+}
+.raffle-draw-num-left .rdnl-av-number {
+    padding: 5px 10px;
+    background-color: var(--green);
+    width: max-content;
+    font-family: "Poppins",sans-serif;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.873);
+    letter-spacing: 1.5px;
+}
+/* raffle-draw-num-left */
 
 .raffle-search-number {
     width: 100%;
@@ -65,11 +98,18 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
+}
+.raffle-my-raffle-ticket .rmrt-ticket-wrapper .rmrt-no-tickets {
+    color: white;
+    letter-spacing: 1.5px;
+    border: 1px solid var(--yellow);
+    padding: 0 10px;
+    border-radius: 3px;
 }
 .raffle-my-raffle-ticket .rmrt-ticket-wrapper .rmrt-txt {
     letter-spacing: 1.5px;
     color: white;
-    text-decoration: underline;
 }
 .raffle-my-raffle-ticket .rmrt-ticket-wrapper .rmrt-tickets {
     border: 1px solid var(--yellow);
@@ -81,7 +121,6 @@
 }
 .raffle-number-container {
     display: flex;
-    flex-wrap: wrap;
     height: 400px;
     overflow-y: auto;
     width: 100%;
@@ -90,8 +129,16 @@
     padding: 5px;
     border: 1px solid white;
     gap: 5px;
-    justify-content: center;
     border-radius: 5px;
+    background-color: var(--light-black);
+}
+.raffle-number-container .raffle-number-box-wrapper{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 .raffle-number-container .raffle-number-box {
     width: 50px;
@@ -230,3 +277,240 @@
     border-radius: 5px;
     padding-left: 10px;
 }
+
+/* .rdji */
+.rd-join-info-container {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: #15191fb9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.rd-join-info-container .rd-join-info {
+    width: 100%;
+    max-width: 400px;
+    height: max-content;
+    padding: 20px 10px;
+    background-color: var(--light-black);
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.rd-join-info-container .rd-join-info .rdji-error {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: var(--red);
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.826);
+}
+.rd-join-info-container .rd-join-info .rdji-error button {
+    padding: 3px 5px;
+    cursor: pointer;
+}
+.rd-join-info-container .rd-join-info .rdji-header span {
+    font-family: "Poppins",sans-serif;
+    font-size: 20px;
+    color: rgba(255, 255, 0, 0.764);
+    letter-spacing: 1.5px;
+}
+.rd-join-info-container .rd-join-info .rdji-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.rd-join-info-container .rd-join-info .rdji-input label {
+    color: white;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    opacity: .8;
+}
+.rd-join-info-container .rd-join-info .rdji-input input {
+    height: 30px;
+    padding-left: 10px;
+    font-family: "Poppins",sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+.rd-join-info-container .rd-join-info .rdj-action {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.rd-join-info-container .rd-join-info .rdj-action button {
+    width: 40%;
+    height: 30px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all .3s;
+    opacity: 1;
+}
+.rd-join-info-container .rd-join-info .rdj-action button:hover {
+    transform: scale(1.05);
+    opacity: .8;
+}
+.rd-join-info-container .rd-join-info .rdj-action button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+.rd-join-info-container .rd-join-info .rdj-action button:nth-child(1) {
+    background-color: var(--green);
+    letter-spacing: 1.5px;
+    color: rgb(17, 18, 18);
+}
+.rd-join-info-container .rd-join-info .rdj-action button:nth-child(2) {
+    background-color: var(--red);
+    letter-spacing: 1.5px;
+    color: rgb(17, 18, 18);
+}
+/* .rdji */
+
+/* affle-success-purchase */
+.raffle-success-purchase {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    z-index: 9999;
+    background-color: #15191f87;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.raffle-success-purchase .rsp-body {
+    width: 100%;
+    max-width: 400px;
+    height: max-content;
+    border: 1px solid white;
+    background-color: var(--light-black);
+    padding: 10px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.82);
+    font-family: "Poppins",sans-serif;
+}
+.raffle-success-purchase .rsp-body  .rsp-body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.raffle-success-purchase .rsp-body  .rsp-body-content span:nth-child(1) {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+.raffle-success-purchase .rsp-body  .rsp-body-content i{
+    font-size: 30px;
+    margin: 10px;
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--green);
+}
+.raffle-success-purchase .rsp-body  .rsp-body-content .rsp-number {
+    margin-top: 5px;
+    letter-spacing: 1.5px;
+}
+.raffle-success-purchase .rsp-body  .rsp-body-content .rsp-number span {
+    padding: 3px 10px;
+    border: 1px solid yellow;
+    background-color: yellow;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: var(--blue-gray);
+}
+
+.raffle-success-purchase .rsp-body  .rsp-action {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 20px 0;
+}
+.raffle-success-purchase .rsp-body  .rsp-action button{
+    width: 90%;
+    height: 30px;
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border: 1px solid rgb(12, 12, 150);
+    background-color: rgb(12, 12, 150);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.766);
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s;
+}
+.raffle-success-purchase .rsp-body  .rsp-action button:hover {
+    transform: scale(1.05);
+    opacity: .7;
+}
+.raffle-success-purchase .rsp-body  .rsp-action button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+/* affle-success-purchase */
+
+
+/* .raffle-draw-instruction  */
+.raffle-draw-instruction {
+    width: 100%;
+    max-width: 1450px;
+    margin: 50px auto 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    color: black;
+    background-color: var(--green);
+}
+.raffle-draw-instruction .raffle-draw-note {
+    color: var(--yellow);
+    letter-spacing: 1.5px;
+}
+.raffle-draw-instruction .raffle-live-link {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1.5px;
+}
+.raffle-draw-instruction .raffle-draw-text .rdt-content-head  {
+    margin: 0 0 10px;
+    letter-spacing: 1.5px;
+}
+.raffle-draw-instruction .raffle-draw-text .rdt-instruct {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1.5px;
+}
+
+
+.raffle-draw-instruction .raffle-draw-conduct {
+    margin-top: 20px;
+}
+.raffle-draw-instruction .raffle-draw-conduct .rdc-header {
+letter-spacing: 1.5px;
+font-size: 18px;
+}
+.raffle-draw-instruction .raffle-draw-conduct .rdc-content-text {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1.5px;
+}
+.raffle-draw-instruction .raffle-draw-conduct .rdc-content-text span {
+    margin-top: 5px;
+}
+/* .raffle-draw-instruction  */
+

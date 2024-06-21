@@ -37,6 +37,15 @@ const WelcomeMsg = () => {
                         <div className="wbc-note">
                             <p>Every Bet is Credits 20.00 </p>
                         </div>
+
+                        <div className="wbc-text">
+                            <h2>Raffle Draw:</h2>
+                            <p>For just 500 PHP, you can enter the draw and stand a chance to win a massive cash prize. There are only 3,000 slots available, so act fast. Don’t miss out on this incredible opportunity to test your luck. Buy your ticket now!</p>
+                            <p>1 million Prize / 3000 slots</p>
+                        </div>
+                        <div className="wbc-note">
+                            <p>Credits 500.00 Per Slot</p>
+                        </div>
                     </div>
                     <div className="welcome-msg-btn">
                         <button onClick={CloseBtnHandler}>Close</button>

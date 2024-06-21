@@ -150,7 +150,7 @@ const Roulette = () => {
         <audio style={{display: 'none'}}  ref={audioRef} src={rouletteSound}></audio>
 
         <div className="roulette-header">
-            <h1>10k Jackpot Price. Play now!</h1>
+            <h1>10k Jackpot Prize. Play now!</h1>
         </div>
         <div className="roulette-game-box">
             <div className="main-roulette">
