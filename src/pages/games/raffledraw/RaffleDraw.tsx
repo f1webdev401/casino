@@ -30,7 +30,6 @@ const RaffleDraw = () => {
         setIsLoading(true)
         if(userD) {
             if(userD.credits > 500) {
-                console.log("success")
                 setUserD((prev:any) => ({...prev,credits:parseInt(userD.credits) - 500 , 
                 }))
                 await update(ref(db,`raffle/1mprize`),{
@@ -54,7 +53,6 @@ const RaffleDraw = () => {
                 setSelectedNumber("")
                 setSuccessP(true)
             }else {
-                console.log("Not enough balance")
                 setErrorMsg("Not enough credits !")
                 setIsLoading(false)
             }

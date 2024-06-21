@@ -45,15 +45,11 @@ const Uprizehunt = () => {
         let newData = [...data]
         let dats = shuffle(newData)
         setData(dats)
-        console.log(process.env.REACT_APP_FUNCTION)
     }
     const ChooseCardsBtn = (target:any) => {
-        console.log(target)
-        console.log(selectedCard)
         if(target === 1) {
             let newData = [...data]
             let dats = shuffle(newData)
-            console.log(dats)
             setData(dats)
         }
         else {
