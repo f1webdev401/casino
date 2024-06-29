@@ -9,11 +9,16 @@ import { onValue, ref } from "firebase/database";
 import { db } from "./firebase-config";
 import { useContext } from "react";
 import UserContext from "./context/UserContext";
+
+
+
 function App() {
 
+  
   const [user,setUser] = useState<any>(null)
   const {userD,setUserD} = useContext(UserContext)
   useEffect(() => {
+   
     onAuthStateChanged(auth,(currentUser) => {
       setUser(currentUser)
       if(!currentUser) {
@@ -26,6 +31,7 @@ function App() {
         setUserD({...data,...currentUser})
       })
     })
+   
   },[])
   return (
     <main className="main-app">

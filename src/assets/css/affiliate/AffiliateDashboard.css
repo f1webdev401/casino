@@ -1,0 +1,47 @@
+.affiliate-d-container {
+    height: calc(100vh - 70px);
+    margin: 0 auto;
+    background-color: var(--light-black);
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+.adc-link {
+    border: 1px solid white;
+    color: white;
+   font-family: "Poppins",sans-serif; 
+   letter-spacing: 1.5px;
+   display: flex;
+   flex-direction: column;
+}
+.adc-e-p {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 20px;
+}
+.adc-e-p .adc-earnings {
+    width: 320px;
+    height: 120px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.adc-e-p .adc-players {
+    width: 320px;
+    height: 120px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.adc-active-task {
+    width:  320px;
+    height: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 1px solid white;
+
+}

@@ -1,0 +1,460 @@
+.keno-container {
+    height: max-content;
+    background-color: var(--blue-gray);
+    padding: 20px 0px;
+}
+.keno-header {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px 0;
+
+}
+.keno-header h1 {
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: var(--yellow);
+}
+
+.keno-header .kh-a-htp {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "Poppins",sans-serif;
+    border-bottom: 1px solid var(--yellow);
+    width: max-content;
+}
+.keno-header .kh-a-htp button {
+    font-family: "Poppins",sans-serif;
+    padding: 0 5px;
+    background-color: var(--red);
+    border: none;
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+    opacity: 1;
+    transform: scale(1);
+    transition: all .3s;
+    cursor: pointer;
+}
+.keno-header .kh-a-htp button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.keno-header .kh-a-htp button:hover {
+    transform: scale(1);
+    opacity: 1;
+}
+.keno-reminder {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--red);
+    padding: 5px;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+.keno-reminder button {
+    font-size: 18px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s;
+}
+.keno-reminder button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.keno-reminder button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.keno-numbers-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--light-black);
+    height: 350px;
+    border: 1px solid white;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.keno-numbers-wrapper {
+    display: grid;
+    grid-template-columns: repeat(8,auto);
+    grid-template-columns: repeat(10,auto);
+    height: 100%;
+    font-family: "Poppins",sans-serif;
+}
+.keno-numbers-wrapper .keno-number {
+    border: 1px solid rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: transparent;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 50px;
+    height: 43.3px;
+}
+.keno-numbers-wrapper .keno-number span {
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s;
+}
+.keno-numbers-wrapper .keno-number:hover span {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.keno-numbers-wrapper .keno-number:active span {
+    transform: scale(1);
+    opacity: 1;
+}
+.keno-action-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.keno-action-container .div-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins",sans-serif;
+    align-items: center;
+}
+.keno-action-container .div-wrapper .win-wrapper {
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+}
+.keno-action-container .div-wrapper .stat-wrapper {
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+}
+.keno-action-container .div-wrapper  .num-choose-wrapper {
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+.keno-action-container .div-wrapper  .num-choose-wrapper .num-choose-div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.keno-action-container .div-wrapper  .num-choose-wrapper .num-choose-div span {
+    border-bottom: 1px solid whitesmoke;
+}
+.keno-action-container .div-wrapper .amount-b-wrapper {
+    height: 30px;
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.keno-action-container .div-wrapper .amount-b-wrapper input {
+    height: 25px;
+    outline: none;
+    font-size: 16px;
+    font-family: "Poppins",sans-serif;
+    width: 100px;
+    letter-spacing: 1.5px;
+}
+.keno-action-container .div-wrapper .amount-b-wrapper button {
+    height: 25px;
+    min-width: 50px;
+    padding: 0 5px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--yellow);
+    border-radius: 3px;
+    color: whitesmoke;
+    transform: scale(1);
+    opacity: 1;
+    transition:  all .3s;
+}
+.keno-action-container .div-wrapper .amount-b-wrapper button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.keno-action-container .div-wrapper .amount-b-wrapper button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+.keno-action-container .div-wrapper .start-wrapper button {
+    padding: 3px 15px;
+    border: none;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: linear-gradient(to right ,#E1A203,#fcb605);
+    font-weight: 600;
+    color: var(--light-black);
+    opacity: 1;
+    transform: scale(1);
+    transition: all .3s;
+}
+.keno-action-container .div-wrapper .start-wrapper button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.keno-action-container .div-wrapper .start-wrapper button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+.payout-container {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    background-color: #15191fa6;
+}
+
+.payout-container .payout-box {
+    width: 100%;
+    max-width: 350px;
+    height: 170px;
+    background-color: var(--light-black);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    border: 5px solid var(--green);
+}
+
+.payout-container .payout-box h1 {
+    font-family: "Poppins",sans-serif;
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+    color: var(--yellow);
+    font-size: 40px;
+    border-bottom: 2px solid var(--yellow);
+}
+.payout-container .payout-box  h2 {
+    color: lawngreen;
+}
+.payout-container .payout-box button {
+    padding: 5px 20px;
+    margin-top: 10px;
+    width: 100px;
+    background-color: var(--green);
+    border: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: whitesmoke;
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1);
+    transition: all .3s;
+}
+.payout-container .payout-box button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.payout-container .payout-box button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.khp-container {
+    height: max-content;
+    border: 1px solid var(--yellow);
+    padding: 40px;
+    width: 100%;
+    max-width: 1000px;
+    font-family: "Poppins",sans-serif;
+    margin: 100px auto 50px;
+    background-color: var(--light-black);
+    color: rgba(245, 245, 245, 0.786);
+    border-radius: 5px;
+}
+.khp-container .khp-header h1 {
+    font-family: "Poppins",sans-serif;
+}
+.khp-container .khp-body .khp-body-txt ol li {
+    letter-spacing: 1.5px;
+}
+.khp-container .khp-body .khp-body-txt .khp-remind {
+    color: var(--yellow);
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+.khp-container .khp-body .khp-body-txt ul li {
+    letter-spacing: 1.5px;
+}
+.kp-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: var(--light-black);
+    padding: 5px;
+    border-radius: 5px;
+}
+.kp-container .kp-title {
+    color: var(--yellow);
+    font-family: "Poppins",sans-serif;
+    margin: 20px 0;
+    letter-spacing: 1.5px;
+}
+.kp-container .kp-table .kp-header {
+    display: flex;
+}
+.kp-container .kp-table .kp-header .kph-h {
+    width: 30%;
+}
+.kp-container .kp-table .kp-table-body .kp-table-data {
+    display: flex;
+    border-bottom: 1px solid white;
+    padding: 5px;
+    margin-top: 10px;
+}
+.kp-container .kp-table .kp-table-body .kp-table-data  .kp-data {
+    width: 30%;
+    font-family: "Poppins",sans-serif;
+    color: whitesmoke;
+}
+@media only screen and (max-width: 800px) {
+    .kp-container .kp-table .kp-header .kph-h {
+        width: 33%;
+    }
+    .kp-container .kp-table .kp-header .kph-h:nth-child(3) {
+        text-align: center;
+    }
+     .kp-container .kp-table .kp-header .kph-h h2 {
+        font-size: 17px;
+     }
+     .kp-container .kp-table .kp-table-body .kp-table-data  .kp-data {
+        width: 33%;
+     }
+     .kp-container .kp-table .kp-table-body .kp-table-data  .kp-data:nth-child(3) {
+        text-align: center;
+     }
+     .kp-container .kp-table .kp-table-body .kp-table-data  .kp-data h3 {
+        font-size: 16px;
+     }
+}
+@media only screen and (max-width: 520px) {
+    .keno-container {
+        padding-top: 0px;
+    }
+    .kc-box-container {
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .keno-header {
+        max-width: 400px;
+        padding: 5px 0;
+    }
+    .keno-header h1 {
+        font-size: 20px;
+    }
+    .keno-reminder {
+        max-width: 400px;
+    }
+    .keno-reminder span {
+        font-size: 14px;
+    }
+    .keno-header .kh-a-htp  a {
+        font-size: 13px;
+    }
+    .keno-header .kh-a-htp button {
+        font-size: 12px;
+    }
+    .keno-numbers-container {
+        max-width: 400px;
+        height: 300px;
+        min-height: 300px;
+        border-radius: 2px;
+        margin-top: 0px;
+    }
+    .keno-numbers-wrapper .keno-number {
+        width: 40px;
+        height: 37.5px;
+    }
+    .keno-action-container{
+        max-width: 400px;
+    }
+    .keno-action-container .div-wrapper .win-wrapper span{
+        font-size: 14px;
+    }
+    .keno-action-container .div-wrapper .stat-wrapper span {
+        font-size: 14px;
+    }
+    .keno-action-container .div-wrapper  .num-choose-wrapper span {
+        font-size: 14px;
+    }
+    .keno-action-container .div-wrapper .amount-b-wrapper span {
+        font-size: 14px;
+    }
+    .keno-action-container .div-wrapper .start-wrapper button:hover {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .khp-container .khp-header h1 {
+        font-size: 19px;
+        letter-spacing: 1.5px;
+    }
+    .khp-container .khp-body .khp-body-txt ol li {
+        margin-top: 10px;
+        font-size: 14px;
+    } 
+}
+@media only screen and (max-width: 410px) {
+    .keno-header {
+        max-width: 350px;
+    }
+    .keno-reminder {
+        max-width: 350px;
+    }
+    .keno-numbers-container {
+        max-width: 350px;
+        height: 280px;
+        border-radius: 2px;
+    }
+    
+    .keno-numbers-wrapper .keno-number {
+        width: 35px;
+        height: 35.5px;
+    }
+    .keno-action-container {
+        padding: 5px;
+    }
+    .keno-action-container .div-wrapper  .num-choose-wrapper .num-choose-div span {
+        font-size: 12px;
+    }
+}

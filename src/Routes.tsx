@@ -20,6 +20,9 @@ import { UserContextProvider } from "./context/UserContext";
 import RedeemPoints from "./pages/redeempoints/RedeemPoints";
 import Uprizehunt from "./pages/games/uprizehunt/Uprizehunt";
 import RaffleDraw from "./pages/games/raffledraw/RaffleDraw";
+import AffiliateAdmin from "./pages/affiliate/AffiliateAdmin";
+import AffiliateDashboard from "./pages/affiliate/AffiliateDashboard";
+import Keno from "./pages/games/keno/Keno";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -50,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: 'ultimateprizehunt',
                 element: <Uprizehunt />
+            },
+            {
+                path: 'keno',
+                element: <Keno/>
             },
             {
                 path: 'raffledraw',
@@ -106,6 +113,16 @@ const router = createBrowserRouter([
             {
                 path: 'adminwithdrawals',
                 element: <AdminWithdraw/>
+            }
+        ]
+    },
+    {
+        path:'affiliate',
+        element: <AffiliateAdmin/>,
+        children: [
+            {
+                path:'',
+                element:<AffiliateDashboard/>
             }
         ]
     }
