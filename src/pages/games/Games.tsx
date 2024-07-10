@@ -5,6 +5,7 @@ import UhuntImg from '../../assets/images/u-hunt.png'
 import NeedLogin from '../../components/NeedLogin'
 import WelcomeMsg from './WelcomeMsg'
 import RaffleImg from '../../assets/images/raffle-img.png'
+import KenoImg from '../../assets/images/keno-img.png'
 const Games = () => {
   return (
     <section className='games-container'>
@@ -35,6 +36,23 @@ const Games = () => {
                 </NavLink>
                 </div>
             </div>
+
+            <div className="smm-games-container games-p-event">
+                    <div className="smm-games-header games-pe-header">
+                        <span>Smm Games</span>
+                    </div>
+                <div className="smm-games-list games-event-list">
+                    <NavLink to={'/keno'}>
+                        <span>Win Up to 1 million</span>
+                        <div className="smm-g-image game-e-image">
+                            <img src={KenoImg} alt="" />
+                        </div>
+                        <span>Keno Game</span>
+                        <p>Play now</p>
+                    </NavLink>
+                </div>
+            </div>
+
             <div className="games-p-event">
                 <div className="games-pe-header">
                 <span>Raffle</span>

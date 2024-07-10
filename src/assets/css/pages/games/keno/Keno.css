@@ -2,6 +2,7 @@
     height: max-content;
     background-color: var(--blue-gray);
     padding: 20px 0px;
+    overflow-x: hidden;
 }
 .keno-header {
     width: 100%;

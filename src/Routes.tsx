@@ -23,6 +23,9 @@ import RaffleDraw from "./pages/games/raffledraw/RaffleDraw";
 import AffiliateAdmin from "./pages/affiliate/AffiliateAdmin";
 import AffiliateDashboard from "./pages/affiliate/AffiliateDashboard";
 import Keno from "./pages/games/keno/Keno";
+import AffiliateCashout from "./pages/affiliate/AffiliateCashout";
+import Plinko from "./pages/games/plinko/Plinko";
+import HighLow from "./pages/games/highlow/HighLow";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -57,6 +60,14 @@ const router = createBrowserRouter([
             {
                 path: 'keno',
                 element: <Keno/>
+            },
+            {
+                path: 'plinko',
+                element: <Plinko/>
+            },
+            {
+                path: 'highlow',
+                element: <HighLow/>
             },
             {
                 path: 'raffledraw',
@@ -123,6 +134,10 @@ const router = createBrowserRouter([
             {
                 path:'',
                 element:<AffiliateDashboard/>
+            },
+            {
+                path: 'cashout',
+                element: <AffiliateCashout/>
             }
         ]
     }

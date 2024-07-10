@@ -2,4 +2,28 @@
     height: 70px;
     background-color: var(--light-black);
     border-bottom: 1px solid white;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.affiliate-nav .an-banner h1 {
+    font-family: "Poppins",sans-serif;
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+}
+
+.affiliate-nav  .an-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "Poppins",sans-serif;
+}
+.affiliate-nav  .an-links a {
+    letter-spacing: 1.5px;
+    text-decoration: none;
 }

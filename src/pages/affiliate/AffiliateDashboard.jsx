@@ -13,22 +13,25 @@ const AffiliateDashboard = () => {
             <button>Copy Link</button>
             </div>
             <div className="adc-description">
-                <span>Share the Link to anyone and get a 50 php commision every time they cashin</span>
+                <span>Share the Link to anyone and get a 10% php commision every time they cashin</span>
             </div>
         </div>
 
         <div className="adc-e-p">
 
         <div className="adc-earnings">
-            <span>Earnings</span>
+            <span className='adc-title'>Earnings</span>
             <div className="adc-earning-box">
                 <span>0 PHP</span>
             </div>
+            <div className="adc-e-action">
+            <button>Cashout</button>
+            </div>
         </div>
 
-        <div className="adc-players">
-            <span>Players</span>
-            <div className="adc-player-box">
+        <div className="adc-referrals">
+            <span>Referrals</span>
+            <div className="adc-referral-box">
                 <span>0</span>
             </div>
         </div>

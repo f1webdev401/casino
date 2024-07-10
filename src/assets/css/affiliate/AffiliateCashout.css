@@ -1,0 +1,63 @@
+.afc-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: calc(100vh - 70px);
+    background-color: var(--light-black);
+    padding-top: 20px;
+}
+
+.afc-header {
+    color: var(--yellow);
+    font-family: "Poppins",sans-serif;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+
+.afc-b-head {
+    margin-left: 20px;
+    font-family: "Poppins",sans-serif;
+    color: whitesmoke;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.afc-cashout-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    border: 1px solid white;
+    height: max-content;
+    padding: 20px;
+    background-color: var(--blue-gray);
+    border-radius: 5px;
+}
+.afc-cashout-form  .afc-form-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-family: "Poppins",sans-serif;
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+}
+.afc-cashout-form  .afc-form-input  input {
+    height: 30px;
+    font-family: "Poppins",sans-serif;
+    padding-left: 5px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    outline: none;
+}
+
+.afc-cashout-form button {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}

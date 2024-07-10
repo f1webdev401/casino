@@ -6,9 +6,16 @@
     max-width: 1200px;
     padding: 10px;
 }
-
+.adc-header {
+    margin: 20px 0;
+}
+.adc-header h1 {
+    font-family: "Poppins",sans-serif;
+    font-size: 25px;
+    color: var(--yellow);
+    letter-spacing: 1.5px;
+}
 .adc-link {
-    border: 1px solid white;
     color: white;
    font-family: "Poppins",sans-serif; 
    letter-spacing: 1.5px;
@@ -27,13 +34,52 @@
     border: 1px solid white;
     padding: 5px;
     border-radius: 5px;
+    background-color: var(--green);
+    font-family: "Poppins",sans-serif;
 }
-.adc-e-p .adc-players {
+.adc-e-p .adc-earnings .adc-title {
+    letter-spacing: 1.5px;
+}
+.adc-e-p .adc-earnings .adc-earning-box span {
+    font-size: 20px;
+}
+.adc-e-p .adc-earnings .adc-e-action {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+.adc-e-p .adc-earnings .adc-e-action  button {
+    width: 100px;
+    height: 27px;
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--light-black);
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s;
+}
+.adc-e-p .adc-earnings .adc-e-action  button:hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+.adc-e-p .adc-earnings .adc-e-action  button:active {
+    transform: scale(1);
+    opacity: 1;
+}
+.adc-e-p .adc-referrals {
     width: 320px;
     height: 120px;
     border: 1px solid white;
     padding: 5px;
     border-radius: 5px;
+    background-color: var(--yellow);
+    font-family: "Poppins",sans-serif;
 }
 
 .adc-active-task {
@@ -43,5 +89,6 @@
     border-radius: 5px;
     margin-top: 20px;
     border: 1px solid white;
-
+    background-color: #162640;
+    font-family: "Poppins",sans-serif;
 }
