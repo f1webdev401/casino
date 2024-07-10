@@ -700,8 +700,24 @@
     background-color: var(--light-black);
     box-shadow: 0 0 2px white;
     border-radius: 5px;
+    margin-bottom: 100px;
 }
-.hl-iab-container .hliab-box h2 {
+.hl-iab-container .hliab-box .hliab-err {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    background-color: var(--red);
+    padding: 5px;
+    border-radius: 3px;
+}
+.hl-iab-container .hliab-box .hliab-err  button {
+    cursor: pointer;
+    padding: 2px 5px;
+    background-color: var(--yellow);
+    color: whitesmoke;
+    border: none;
 }
 .hl-iab-container .hliab-box input {
     height: 30px;
@@ -781,8 +797,7 @@
     color: var(--green);
     text-shadow: 0 0 1px white;
 }
-.hl-win-container .hl-win-box h2 {
-}
+
 .hl-win-container .hl-win-box button {
 
     width: 100px;
@@ -809,9 +824,23 @@
 }
 
 @media only screen and (max-width: 560px) {
-    
+   
     .hl-card-cover {
         height: 300px;
+        margin-top: 50px;
+    }
+    .hl-card-cover .hlcard-cancel .hl-game-cancel-box {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to right ,#E1A203,#e1a203c3);
+        width: 100%;
+    }
+    .hl-card-cover .hlcard-cancel .hl-game-cancel-box span {
+        font-family: "Poppins",sans-serif;
+        letter-spacing: 1.5px;
+        font-size: 30px;
     }
     .hl-card-cover .hl-card1-cover {
         width: 230px;
@@ -821,6 +850,7 @@
     }
     .hl-card-container {
         height: 300px;  
+        margin-top: 50px;
     } 
     .hl-card-container .hl-card  {
         width: 230px;
@@ -838,6 +868,53 @@
     .hl-card-container .hl-card .hl-card-text2 span:nth-child(2) {
         font-size: 18px;
     }
+    .hl-card-container .hl-card .card-jqk span  {
+        font-size: 50px;
+    }
+    .hl-bet-payout span {
+        font-family: "Poppins",sans-serif;
+        letter-spacing: 1.5px;
+        font-size: 14px;
+    }
+
+
+    .hl-bet-percentage {
+        margin-top: 20px;
+    }
+    .hl-card-container .hl-card .hl-card-type {
+        width: 70%;
+        height: 70%;
+    } 
+  
+    .hl-card-container .hl-card-two .hl-card-type{
+        height: 70%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .hl-card-container .hl-card-two .hl-card-type span:nth-child(1) {
+        font-size: 40px;
+    }
+    .hl-card-container .hl-card-two .hl-card-type span:nth-child(2) {
+        font-size: 40px; 
+    
+    }
+
+    .hl-card-container .hl-card-one .hl-card-type{
+        width: max-content;
+        height: max-content;
+        margin: auto;
+        position: absolute;
+        inset: 0;
+    }
+    .hl-card-container .hl-card-one .hl-card-type span {
+        font-size: 80px;
+    }
+ 
 }
 @media only screen and (max-width: 510px) {
     .hl-card-cover {
@@ -869,7 +946,7 @@
         font-size: 25px;
     }
     .hl-card-container .hl-card-one .hl-card-type span {
-        font-size: 90px;
+        font-size: 80px;
     }
 }
 @media only screen and (max-width: 450px) {
@@ -887,6 +964,9 @@
     }
     .hl-card-container .hl-card  {
         width: 180px;
+    }
+    .hl-card-container .hl-card-one .hl-card-type span {
+        font-size: 80px;
     }
 }
 
@@ -908,5 +988,11 @@
     }
     .hl-bet-action .hlba-wrapper button {
         width: 120px;
+    }
+    .hl-card-container .hl-card .hl-card-type span {
+        font-size: 20px;
+    }
+    .hl-card-container .hl-card-one .hl-card-type span {
+        font-size: 80px;
     }
 }

@@ -22,10 +22,12 @@ const HighLow = () => {
     const [choosenCard,setChoosenCard] = useState<any>('')
     const [payoutVal1,setpayoutVal1] = useState<any>(0)
     const [payoutVal2,setpayoutVal2] = useState<any>(0)
+    const [gameCloseErr,setGameCloseErr] = useState<any>("")
     useEffect(() => {
         socket.connect()
         socket.on('connect',() => {
             console.log('connected')
+            
             let socketid =localStorage.getItem('socketid') as string || null
             if(!socketid) {
                 localStorage.setItem("socketid",socket.id as string)
@@ -104,34 +106,32 @@ const HighLow = () => {
     },[])
 
     const ConfirmBetButton = () => {
-        console.log(choosenCard)
         if(userD && socketId) {
+            if(betAmount === "") {
+                setGameCloseErr("Minimum bet is 10.00")
+                return;
+            }
+            if(parseFloat(betAmount) < 10) {
+                setGameCloseErr("Minimum bet is 10.00")
+                return;
+            }
             socket.emit('hl-place-bet',{card: choosenCard,
                 betAmount: betAmount.replace(/^0+/, ''),
                 name: 'Shit',id:userD.uid,credits:userD.credits,socketId})
         }
-    }
-    const PlacebetCard1Button = () => {
-        if(userD && socketId) {
-            socket.emit('hl-place-bet',{card: 'card1',
-                betAmount: 20,
-                name: 'Holand',id:userD.uid,credits:userD.credits,cardbet:1,socketId})
-        }
-       
-    } 
-    const PlacebetCard2Button = () => {
-        if(userD && socketId) {
-            let betData = {
-                card: 'card2',
-                betAmount: 20,
-                name: 'Holand'
+        socket.on('hl-close-game',msg => {
+            console.log(msg)
+            if(msg) {
+                console.log("Close")
+                setGameCloseErr("Game Already Close")
+                return;
+            }else {
+                sethlOpenInputAmount(false)
+                setGameCloseErr("")
             }
-            socket.emit('hl-place-bet',{card: 'card2',
-                betAmount: 20,
-                name: 'Holand',id:userD.uid,credits:userD.credits,cardbet:1,socketId:socketId})
-        }
-    } 
-    console.log(card1)
+        })
+        
+    }
     function hlCancelGame() {
         setIsCancel(true)
         setTimeout(() => {
@@ -145,22 +145,7 @@ const HighLow = () => {
             <h1 className='hlsi-text'>Starts in: <span>{startsIn}</span></h1>
         }
         </div>
-        {/* <div className="hl-container-header">
-            <h1>HIG-LOW</h1>
-        </div> */}
-        {/* <div className="card">
-            <div>
-                <h1>Card1: {card1}</h1>
-                <h2>Bets: {card1bet}</h2>
-                <span>Percentage: {card1PayoutPercentage}%</span>
-            </div>
-            <br />
-            <div>
-                <h1>Card2: {card2}</h1>
-                <h2>Bets:{card2bet} </h2>
-                <span>Percentage: {card2PayoutPercentage}%</span>
-            </div>
-        </div> */}
+       
         {hlRestart ? 
             <div className="hl-card-cover">
                 {isCancel && 
@@ -214,15 +199,12 @@ const HighLow = () => {
                             {card1.card[0] === 13 &&
                                 <span>K</span>
                             }
-                            
                             <span>{card1.identifier?.suits}</span>
                         </div>
                         {card1.card[0] <= 10 &&
                          <div className="hl-card-type">
                          {card1.card_num_display.map((key:any,index:any) => (
-                             <>
-                                 <span>{card1.identifier?.suits}</span>
-                             </>
+                                 <span key={index}>{card1.identifier?.suits}</span>
                          ))}
                         </div>
                         }
@@ -293,9 +275,7 @@ const HighLow = () => {
                         {card2.card[0] <= 10 &&
                          <div className="hl-card-type">
                          {card2.card_num_display.map((key:any,index:any) => (
-                             <>
-                                 <span>{card2.identifier?.suits}</span>
-                             </>
+                                 <span key={index}>{card2.identifier?.suits}</span>
                          ))}
                         </div>
                         }
@@ -371,6 +351,12 @@ const HighLow = () => {
         {hlOpenInputAmount && 
          <div className="hl-iab-container">
          <div className="hliab-box">
+            {gameCloseErr && 
+            <div className="hliab-err">
+                <span>{gameCloseErr}</span>
+                <button onClick={() => setGameCloseErr(false)}><i className="fa-solid fa-xmark"></i></button>
+            </div>
+            }
              <h2>Input Amount</h2>
              <input type="number" 
              onChange={(e) => setBetAmount(e.target.value)}
@@ -380,7 +366,6 @@ const HighLow = () => {
                  <button
                  onClick={() => {
                     ConfirmBetButton()
-                    sethlOpenInputAmount(false)
                  }}
                  >Confirm</button>
                  <button onClick={() => sethlOpenInputAmount(false)}>Cancel</button>
