@@ -4,7 +4,7 @@ import socket from '../../../socketio'
 import UserContext from '../../../context/UserContext'
 const HighLow = () => {
     const {userD,setUserD} = useContext(UserContext)
-
+    
     const [startsIn,setStartsIn] = useState<any>('')
     const [card1,setCard1] = useState<any>('')
     const [card2,setCard2] = useState<any>('')
@@ -103,10 +103,20 @@ const HighLow = () => {
             setpayoutVal2(value)
        })
         })
+        return () => {
+            socket.off("connect")
+            socket.off("join-hl-game")
+            socket.off("join-game")
+        }
+
     },[])
 
     const ConfirmBetButton = () => {
         if(userD && socketId) {
+            if(userD.credits < parseFloat(betAmount)) {
+                setGameCloseErr("Not Enough Credits")
+                return;
+            }
             if(betAmount === "") {
                 setGameCloseErr("Minimum bet is 10.00")
                 return;
@@ -138,6 +148,7 @@ const HighLow = () => {
             setIsCancel(false)
         },10000)
     }
+  
   return (
     <section className='hl-container'>
         <div className="hl-start-indicator">

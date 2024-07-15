@@ -1,0 +1,56 @@
+.colorgame-container {
+    height: calc(100vh - 80px);
+    background-color: var(--blue-gray);
+}
+
+.cc-color-container{
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    background-color: var(--light-black);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+.cc-color-container button {
+    border: none;
+    border-radius: 5px;
+    transition: all .1s;
+}
+.cc-color-container button:nth-child(1) {
+}
+.cc-action-container {
+    width: 100%;
+    max-width: 500px;
+    height: 120px;
+    margin: 10px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 5px;
+}
+.cc-action-container button {
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: "Poppins",sans-serif;
+    letter-spacing: 1.5px;
+    color: var(--light-black);
+    opacity: 1;
+    transform: scale(1);
+    transition: all .3s;
+}
+
+.cc-action-container button:hover {
+    transform: scale(1.03);
+    opacity: .5;
+}
+.cc-action-container button:active {
+    transform: scale(1);
+    opacity: 1;
+}

@@ -26,6 +26,7 @@ import Keno from "./pages/games/keno/Keno";
 import AffiliateCashout from "./pages/affiliate/AffiliateCashout";
 import Plinko from "./pages/games/plinko/Plinko";
 import HighLow from "./pages/games/highlow/HighLow";
+import ColorGame from "./pages/games/cologame/ColorGame";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
             {
                 path: 'highlow',
                 element: <HighLow/>
+            },
+            {
+                path: 'colorgame',
+                element: <ColorGame/>
             },
             {
                 path: 'raffledraw',

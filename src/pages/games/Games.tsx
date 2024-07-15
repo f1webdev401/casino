@@ -6,9 +6,11 @@ import NeedLogin from '../../components/NeedLogin'
 import WelcomeMsg from './WelcomeMsg'
 import RaffleImg from '../../assets/images/raffle-img.png'
 import KenoImg from '../../assets/images/keno-img.png'
+import Maintenance from '../../components/maintenance/Maintenance'
 const Games = () => {
   return (
     <section className='games-container'>
+        <Maintenance/>
         <NeedLogin />
         <WelcomeMsg/>
         <div className="games-p-wrapper">

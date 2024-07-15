@@ -2,9 +2,11 @@ import { NavLink } from 'react-router-dom'
 import '../assets/css/pages/LandingPage.css'
 import HeadlineImg from '../assets/images/headline-img.png'
 import PlatformImg from '../assets/images/platform-bg.png'
+import Maintenance from '../components/maintenance/Maintenance'
 const LandingPage = () => {
   return (
     <section className='landing-page-container'>
+        <Maintenance/>
         <div className="lp-main-headline-container">
 
             <div className="lp-headline">
