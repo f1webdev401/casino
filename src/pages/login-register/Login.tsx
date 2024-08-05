@@ -4,7 +4,7 @@ import { useContext, useState } from 'react'
 import SignupContext from '../../context/SignupContext'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase-config'
-
+import axios from 'axios'
 const Login = () => {
   const [userDetail,setUserDetail] = useState<any>(
     {
@@ -37,14 +37,33 @@ const Login = () => {
     e.preventDefault()
     setIsSubmitted(true)
     try {
-      const user = await signInWithEmailAndPassword(auth,userDetail.email,userDetail.password)
+      // const user = await signInWithEmailAndPassword(auth,userDetail.email,userDetail.password)
+      // setIsSubmitted(false)
+      // navigate('/games')
+      const {data} = await axios.post('https://smmserver.onrender.com/api/users/login',{
+        ...userDetail
+      },
+      {
+        withCredentials:true
+      }
+      );
+      const {success,message} = data
+      if(success) {
+        setTimeout(() => {
+          navigate('/games')
+        },1000 )
+      }else {
+        console.log(message)
+      }
+      setErrorMessage(message)
       setIsSubmitted(false)
-      navigate('/games')
     }
     catch(e:any) {
-        const errorMessage = e.message;
-        const errorCode = errorMessage.split(':').pop().trim();
-        setErrorMessage(errorCode.slice(0))
+        // const errorMessage = e.message;
+        // const errorCode = errorMessage.split(':').pop().trim();
+        // setErrorMessage(errorCode.slice(0))
+        setErrorMessage(e)
+        console.log(e)
         setIsSubmitted(false)
     }
   }
@@ -70,7 +89,7 @@ const Login = () => {
           </div>
           }
             <div className="login-input-wrapper">
-                <label htmlFor="email">Username</label>
+                <label htmlFor="email">Email</label>
                 <input
                 value={userDetail.email}
                 onChange={(e) => LoginInputHandler(e)}

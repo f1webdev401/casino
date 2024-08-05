@@ -5,7 +5,7 @@ import { signOut } from 'firebase/auth'
 import { auth } from '../firebase-config'
 import { useContext } from 'react'
 import SignupContext from '../context/SignupContext'
-const Navbar = ({user}:any) => {
+const Navbar = (/*{user}:any*/) => {
     const {setSignupMessage} = useContext(SignupContext)
     const navigate = useNavigate()
     const [windowWidth,setWindowWidth] = useState<any>(window.innerWidth)
@@ -29,10 +29,16 @@ const Navbar = ({user}:any) => {
     <>
   
     <nav className='app-nav'>
+        {/**
+          
+         
         <NavLink to={user.user? 'games' : ''} className="nav-logo-txt">
                 <h1>SMM {parseInt(windowWidth) <= 430 && user.user  ? " ": <span>PLAY</span>}</h1>
                 <i className="fa-solid fa-star"></i>
         </NavLink>
+        */}
+        {/*
+        
         {user.user ? 
             <div className='nav-points-menu'>
                 <div className="nav-lucky-points npm-div">
@@ -63,9 +69,7 @@ const Navbar = ({user}:any) => {
             <NavLink to={'aboutus'} style={({isActive}) => {
                 return {opacity: isActive ? '.6':'1'}
             }} end>ABOUT US</NavLink>
-                {/* <NavLink to={'affiliates'}style={({isActive}) => {
-                    return {opacity: isActive ? '.6':'1'}
-                }} end>AFILLIATES</NavLink> */}
+                
         </ul>
         <div className="nav-login-reg-btn">
             <NavLink to={'login'}>Login</NavLink>
@@ -74,12 +78,17 @@ const Navbar = ({user}:any) => {
         <button onClick={() => setMenuBarOpen(true)} className='lw-menu-btn'><i className="fa-solid fa-bars"></i></button>
         </div>
         }
+        */}
     </nav>
-
+{/* <NavLink to={'affiliates'}style={({isActive}) => {
+                    return {opacity: isActive ? '.6':'1'}
+                }} end>AFILLIATES</NavLink> */}
     {menuBarOpen && 
     
     <div  className="menu-nav-helper">
-
+        {/*
+        
+asd
     <div className="nav-menu-container">
         <button onClick={() => setMenuBarOpen(false)} className="close-menu-c">
         <i className="fa-solid fa-rectangle-xmark"></i>
@@ -132,10 +141,7 @@ const Navbar = ({user}:any) => {
         </div>
         <div  className="menu-n-credits menu-list-div">
             <span>Credits</span>
-            {/* <NavLink onClick={() => setMenuBarOpen(false)} to={'deposit'} className="mnc-credits">
-                <i className="fa-solid fa-money-bill"></i>
-                <span>Deposit</span>
-            </NavLink> */}
+            
             <NavLink onClick={() => setMenuBarOpen(false)} to={'withdraw'} className="mnc-credits">
                 <i className="fa-solid fa-building-columns"></i>
                 <span>Withdraw</span>
@@ -157,6 +163,7 @@ const Navbar = ({user}:any) => {
         </div>
         </> :
         <>
+        
             <div className="not-login-menu-links">
                 <NavLink onClick={() => setMenuBarOpen(false)} to={'/'} className='nlm-wrapper'>
                     <i className="fa-solid fa-house"></i>
@@ -180,7 +187,11 @@ const Navbar = ({user}:any) => {
         </>
     }
     </div>
-
+*/}
+{/* <NavLink onClick={() => setMenuBarOpen(false)} to={'deposit'} className="mnc-credits">
+                <i className="fa-solid fa-money-bill"></i>
+                <span>Deposit</span>
+            </NavLink> */}
     </div>
     }
     </>

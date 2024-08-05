@@ -10,7 +10,6 @@ import Maintenance from '../../components/maintenance/Maintenance'
 const Games = () => {
   return (
     <section className='games-container'>
-        <Maintenance/>
         <NeedLogin />
         <WelcomeMsg/>
         <div className="games-p-wrapper">

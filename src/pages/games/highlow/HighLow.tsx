@@ -27,7 +27,14 @@ const HighLow = () => {
         socket.connect()
         socket.on('connect',() => {
             console.log('connected')
-            
+            socket.on('all bet in card 1',(message) => {
+                console.log('asdasd')
+                console.log(message)
+            })
+            socket.on('all bet in card 2',(message) => {
+                console.log('asdasd')
+                console.log(message)
+            })
             let socketid =localStorage.getItem('socketid') as string || null
             if(!socketid) {
                 localStorage.setItem("socketid",socket.id as string)

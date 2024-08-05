@@ -6,7 +6,6 @@ import Maintenance from '../components/maintenance/Maintenance'
 const LandingPage = () => {
   return (
     <section className='landing-page-container'>
-        <Maintenance/>
         <div className="lp-main-headline-container">
 
             <div className="lp-headline">

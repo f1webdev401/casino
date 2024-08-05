@@ -6,13 +6,14 @@ import { set ,ref } from 'firebase/database'
 import { useState } from 'react'
 import { useContext } from 'react'
 import SignupContext from '../../context/SignupContext'
-
+import axios from 'axios'
 const Register = () => {
     const navigate = useNavigate()
     const {setSignupMessage} = useContext(SignupContext)
     const [userDetail,setUserDetail] = useState<any>({
         email: '',
         phonenumber: '',
+        username: '',
         referralCode:'',
         password: '',
         confirmPassword: ''
@@ -63,27 +64,49 @@ const Register = () => {
             return
         }   
         try {
-            const user = await createUserWithEmailAndPassword(auth ,userDetail.email,userDetail.password)
-            await set(ref(db ,`users/${user.user.uid}`), {
-                phonenumber:userDetail.phonenumber,
-                referralCode:userDetail.referralCode,
-                credits:0,
-                luckyPoints:0,
-                isFirstLogin:true,
-                ownReferral:user.user.uid,
-                email:userDetail.email,
-                cashins:["null"],
-                withdrawals:["null"],
-                raffle:["null"]
-            })  
-            await signOut(auth)
-            setSignupMessage("Succesfully Register You can now Login")
-            navigate('/login')
+            /* 
+             // const user = await createUserWithEmailAndPassword(auth ,userDetail.email,userDetail.password)
+            // await set(ref(db ,`users/${user.user.uid}`), {
+            //     phonenumber:userDetail.phonenumber,
+            //     referralCode:userDetail.referralCode,
+            //     credits:0,
+            //     luckyPoints:0,
+            //     isFirstLogin:true,
+            //     ownReferral:user.user.uid,
+            //     email:userDetail.email,
+            //     cashins:["null"],
+            //     withdrawals:["null"],
+            //     raffle:["null"]
+            // })  
+            // await signOut(auth)
+            // setSignupMessage("Succesfully Register You can now Login")
+            // navigate('/login')
+            // setIsSubmitted(false)
+            */
+           
+            const {data} = await axios.post('https://smmserver.onrender.com/api/users/register',{
+                ...userDetail   
+            },
+            {
+                withCredentials: true
+            }
+            );
+            const {success,message} = data;
+            if(success) {
+                console.log("Success")
+                setTimeout(() => {
+                    navigate("/login")
+                },1000)
+            }else { 
+                console.log(message)
+                setErrorInput(message)
+            }
             setIsSubmitted(false)
         }catch(e:any) {
-            const errorMessage = e.message;
-            const errorCode = errorMessage.split(':').pop().trim();
-            setErrorInput(`(${errorCode.slice(0)}`)
+            // const errorMessage = e.message;
+            // const errorCode = errorMessage.split(':').pop().trim();
+            // setErrorInput(`(${errorCode.slice(0)}`)
+            // setIsSubmitted(false)
             setIsSubmitted(false)
         }
     }
@@ -100,6 +123,13 @@ const Register = () => {
                     <button onClick={() => setErrorInput('')} type='button'><i className="fa-solid fa-xmark"></i></button>
                 </div>
                 }
+                <div className="register-input-wrapper">
+                    <label htmlFor="username">Username</label>
+                    <input
+                    onChange={(e) => RegisterInpuHandler(e)}
+                    name='username'
+                    type="username" id='username'/>
+                </div>
                 <div className="register-input-wrapper">
                     <label htmlFor="email">Email</label>
                     <input

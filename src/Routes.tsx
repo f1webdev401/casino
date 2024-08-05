@@ -27,6 +27,7 @@ import AffiliateCashout from "./pages/affiliate/AffiliateCashout";
 import Plinko from "./pages/games/plinko/Plinko";
 import HighLow from "./pages/games/highlow/HighLow";
 import ColorGame from "./pages/games/cologame/ColorGame";
+import Livestream from "./pages/games/livestream/Livestream";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
             {
                 path: 'raffledraw',
                 element: <RaffleDraw/>
+            },
+            {
+                path: 'livestream',
+                element: <Livestream/>
             },
             {
                 path:'login',
