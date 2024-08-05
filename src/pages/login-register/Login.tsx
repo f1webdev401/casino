@@ -5,7 +5,9 @@ import SignupContext from '../../context/SignupContext'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase-config'
 import axios from 'axios'
+import { useCookies } from 'react-cookie'
 const Login = () => {
+  const [cookies, setCookie, removeCookie] = useCookies<any>(['token'])
   const [userDetail,setUserDetail] = useState<any>(
     {
       email:'',
@@ -47,8 +49,9 @@ const Login = () => {
         withCredentials:true
       }
       );
-      const {success,message} = data
+      const {success,message,token} = data
       if(success) {
+        setCookie('token',token)
         setTimeout(() => {
           navigate('/games')
         },1000 )
