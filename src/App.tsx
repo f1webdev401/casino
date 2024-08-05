@@ -18,26 +18,26 @@ function App() {
   const [username,setUsername] = useState<any>("")
   // const {userD,setUserD} = useContext(UserContext)
 
-  useEffect(() => {
-      const verifyCookie  = async () => {
-        if(!cookies.token) {
-          // navigate('/login')
-        }
-        const {data} : any = await axios.post('https://smmserver.onrender.com/api/users',{},
-          {withCredentials:true}
-        )
-        .catch(e => {
-          console.log('error')
-            console.log(e)
-            return
-        })
-        const {status,user} = data
-        setUsername(user)
-        return status ? (console.log("user logged in")) :
-        (removeCookie('token'),navigate('/login'))
-      }
-      verifyCookie()
-  },[cookies,navigate,removeCookie])
+  // useEffect(() => {
+  //     const verifyCookie  = async () => {
+  //       if(!cookies.token) {
+  //         navigate('/login')
+  //       }
+  //       const {data} : any = await axios.post('https://smmserver.onrender.com/api/users',{},
+  //         {withCredentials:true}
+  //       )
+  //       .catch(e => {
+  //         console.log('error')
+  //           console.log(e)
+  //           return
+  //       })
+  //       const {status,user} = data
+  //       setUsername(user)
+  //       return status ? (console.log("user logged in")) :
+  //       (removeCookie('token'),navigate('/login'))
+  //     }
+  //     verifyCookie()
+  // },[cookies,navigate,removeCookie])
 
   const Logout = () => {
     removeCookie("token");
