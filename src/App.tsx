@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
       const verifyCookie  = async () => {
         if(!cookies.token) {
-          navigate('/login')
+          // navigate('/login')
         }
         const {data} : any = await axios.post('https://smmserver.onrender.com/api/users',{},
           {withCredentials:true}
